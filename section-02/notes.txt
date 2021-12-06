@@ -1,4 +1,4 @@
-- javascript console (to test JS in browser) = cmd+option+j (mac) or ctrl+alt+j (windows)
+- JavaScript console (to test JS in browser) = cmd+option+j (mac) or ctrl+alt+j (windows)
 
 - display an alert box
   - alert("Hello World!")
@@ -6,3 +6,8 @@
   - let variable = 'I am a variable'
 - write an if statement
   - if (variable === 'I am a varible!') alert('It is a variable')
+
+JavaScript is a high-level, object-oriented, multi-paradigm programming language
+JavaScript is the verbs of web development (HTML = nouns & CSS = adjectives)
+
+Modern JavaScript started with the release of ES6/ES2015
