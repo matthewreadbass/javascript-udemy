@@ -1,0 +1,8 @@
+- javascript console (to test JS in browser) = cmd+option+j (mac) or ctrl+alt+j (windows)
+
+- display an alert box
+  - alert("Hello World!")
+- set a variable
+  - let variable = 'I am a variable'
+- write an if statement
+  - if (variable === 'I am a varible!') alert('It is a variable')
