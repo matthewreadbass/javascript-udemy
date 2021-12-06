@@ -6,8 +6,13 @@
   - let variable = 'I am a variable'
 - write an if statement
   - if (variable === 'I am a varible!') alert('It is a variable')
+- print to the console
+  - console.log('stuff to print')
 
 JavaScript is a high-level, object-oriented, multi-paradigm programming language
 JavaScript is the verbs of web development (HTML = nouns & CSS = adjectives)
 
 Modern JavaScript started with the release of ES6/ES2015
+
+Seperate concerns by writing individual script.js files and then referencing them in the <body> tag
+  - <script src="script.js"></script>
