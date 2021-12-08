@@ -54,3 +54,5 @@ Comments:
       comment */
 
 You can use double or single quotes to create a string
+
+typeof operator works the same as object.class in Ruby
