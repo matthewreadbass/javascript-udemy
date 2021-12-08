@@ -84,3 +84,11 @@ Basic operators:
       =   +=   -=   /=   *=   ++   --
     - Comparison operators
       >   <   >=   <=   !=
+
+Operator Precedence
+  - Javascript Operator precedence dictates the order in which operators are used
+    - Google "MDN Operator Precedence" for a useful table
+    - Maths comes before comparison, which comes before assignment
+    - Certain operators read left-to-right, others from right-to-left
+    - Parentheses always come firstName
+

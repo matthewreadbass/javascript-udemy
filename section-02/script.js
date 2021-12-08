@@ -34,4 +34,5 @@ console.log(population > finnlandPopulation);
 let averagePopulation = 33;
 console.log(population < averagePopulation);
 
-console.log(`${country} is in ${continent}, and its ${population} million people speak ${language}`);
+let description = `${country} is in ${continent}, and its ${population} million people speak ${language}`;
+console.log(description);
