@@ -1,7 +1,7 @@
 - JavaScript console (to test JS in browser) = cmd+option+j (mac) or ctrl+alt+j (windows)
 
 - display an alert box
-  - alert("Hello World!")
+  - alert('Hello World!')
 - set a variable
   - let variable = 'I am a variable'
 - write an if statement
@@ -22,7 +22,35 @@ Usually, JS is attached to web pages, so needs to be attached to an .html docume
 
 A value is the most fundamental unit of information in JS - strings, numbers, booleans etc.
   - store in variables (declare)
-    - let firstName = "Matthew";
+    - let firstName = 'Matthew';
 
 use camelCase to name variables
   - variable names can only contain letters, numbers, _ and $
+
+In JS, values are either Objects or primitives
+  - Object:
+    let me = {
+      name: 'Matthew'
+    };
+  - Primitive:
+    let firstName = 'Matthew';
+    let age = 27;
+
+Primitive data types:
+  - Numbers (decimals and integers are all numbers)
+  - strings
+  - Booleans
+  - Undefined (no value assigned) - let children;
+  - Null
+  - Symbol
+  - BigInt (numbers too big to be represented by Numbers)
+
+Dynamic Typing - not Static Typing
+  - Only use let when you declare a value, not when you change the value
+
+Comments:
+  - // single line comment
+  - /* Multi-line
+      comment */
+
+You can use double or single quotes to create a string
