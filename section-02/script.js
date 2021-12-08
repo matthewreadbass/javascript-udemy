@@ -1,19 +1,23 @@
 let js = 'amazing';
 console.log(40 + 8 + 23 - 10);
 
-let firstName = 'Matthew';
+const firstName = 'Matthew';
 console.log(firstName);
 
-let country = 'England';
-let continent = 'Europe';
+const country = 'England';
+const continent = 'Europe';
 let population = 68;
 
 console.log(country);
 console.log(continent);
 console.log(population);
 
-let isIsland = true;
+const isIsland = true;
 let language;
 
 console.log(isIsland);
+console.log(language);
+
+language = 'English';
+
 console.log(language);

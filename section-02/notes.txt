@@ -49,10 +49,29 @@ Dynamic Typing - not Static Typing
   - Only use let when you declare a value, not when you change the value
 
 Comments:
-  - // single line comment
-  - /* Multi-line
-      comment */
+  // single line comment
+  /* Multi-line
+    comment */
 
 You can use double or single quotes to create a string
 
 typeof operator works the same as object.class in Ruby
+
+let
+  - declare variables that are mutable / undefined
+    let age = 30;
+    age = 31;
+
+const
+  - value cannot be changed (immutable)
+    const birthYear = 1994;
+  - use as default
+    - good to have as few mutable variables as possible in your code
+
+var
+  - used in legacy codebases
+  - commonplace before ES6
+  - works the same as let
+    var age = 30;
+    age = 31;
+
