@@ -7,7 +7,8 @@
 - write an if statement
   - if (variable === 'I am a varible!') alert('It is a variable')
 - print to the console
-  - console.log('stuff to print')
+  - console.log('stuff to print');
+  - console.log('stuff to print', 'other stuff to print');
 
 JavaScript is a high-level, object-oriented, multi-paradigm programming language
 JavaScript is the verbs of web development (HTML = nouns & CSS = adjectives)
@@ -75,3 +76,11 @@ var
     var age = 30;
     age = 31;
 
+Basic operators:
+  - Allows us to transform/combine values
+    - Math / Arithmetic operators
+      +   -   /   *   **
+    - Assignment operators
+      =   +=   -=   /=   *=   ++   --
+    - Comparison operators
+      >   <   >=   <=   !=

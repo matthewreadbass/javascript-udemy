@@ -21,3 +21,17 @@ console.log(language);
 language = 'English';
 
 console.log(language);
+
+let halfPopulation = population / 2;
+console.log(halfPopulation);
+
+population += 1;
+console.log(population);
+
+let finnlandPopulation = 6;
+console.log(population > finnlandPopulation);
+
+let averagePopulation = 33;
+console.log(population < averagePopulation);
+
+console.log(`${country} is in ${continent}, and its ${population} million people speak ${language}`);
