@@ -16,3 +16,13 @@ Modern JavaScript started with the release of ES6/ES2015
 
 Seperate concerns by writing individual script.js files and then referencing them in the <body> tag
   - <script src="script.js"></script>
+
+Usually, JS is attached to web pages, so needs to be attached to an .html document
+  - write JS using <script> tags
+
+A value is the most fundamental unit of information in JS - strings, numbers, booleans etc.
+  - store in variables (declare)
+    - let firstName = "Matthew";
+
+use camelCase to name variables
+  - variable names can only contain letters, numbers, _ and $
