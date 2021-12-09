@@ -1,4 +1,4 @@
-let js = 'amazing';
+/* let js = 'amazing';
 console.log(40 + 8 + 23 - 10);
 
 const firstName = 'Matthew';
@@ -35,4 +35,32 @@ let averagePopulation = 33;
 console.log(population < averagePopulation);
 
 let description = `${country} is in ${continent}, and its ${population} million people speak ${language}`;
-console.log(description);
+console.log(description); */
+// Coding Challenge #01
+    // - Data 1:
+
+let markMass = 78;
+let markHeight = 1.69;
+let johnMass = 92;
+let johnHeight = 1.95;
+
+let markBMI = markMass / markHeight ** 2;
+let johnBMI = johnMass / johnHeight ** 2;
+
+console.log(markBMI);
+console.log(johnBMI);
+
+let markHigherBMI = markBMI > johnBMI;
+
+console.log(markHigherBMI);
+
+    // - Data 2:
+
+markMass = 95;
+markHeight = 1.88;
+johnMass = 85;
+johnHeight = 1.76;
+
+console.log(markBMI);
+console.log(johnBMI);
+console.log(markHigherBMI);
