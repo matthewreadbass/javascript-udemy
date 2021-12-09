@@ -121,4 +121,9 @@ Type Conversion and Coercion
     - console.log("I am " + 27 + " years old");
     - console.log(`I am ${age} years old`);
     - console.log("23" - "10" - 3); -> returns 10 as a number datatype
-  
+
+Boolean values
+  - 0, '', undefined, null, NaN are the only falsy values in JS
+  - Everything else is truthy
+  - Falsy values have to be converted in to a boolean to actually be false
+    - console.log(Boolean(0));

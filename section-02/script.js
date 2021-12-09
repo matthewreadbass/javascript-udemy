@@ -131,7 +131,7 @@ if(markHigherBMI) {
     console.log(`Mark's BMI (${markMass}) is higher than John's (${johnMass})!`);
 } else {
     console.log(`John's BMI (${johnMass}) is higher than Mark's (${markMass})!`);
-} */
+}
 
 // Type Conversion and Coercion
     // string to number
@@ -147,4 +147,20 @@ console.log('9' - '5'); // return 4 (num)
 console.log('19' - '13' + '17'); // return "617" (string)
 console.log('19' - '13' + 17); // return 23 (num)
 console.log('123' < 57); // return false
-console.log(5 + 6 + '4' + 9 - 4 - 2); // return 1143 (num)
+console.log(5 + 6 + '4' + 9 - 4 - 2); // return 1143 (num) */
+
+// Truthy and falsy values
+
+console.log(Boolean(0)); // false
+console.log(Boolean(undefined)); // false
+console.log(Boolean('')); // false
+console.log(Boolean(' ')); // true
+console.log(Boolean('false')); // true
+
+const money = 0;
+if(money) {
+    console.log("Don't spend it all at once");
+} else {
+    console.log("Get a job");
+} // returns "Get a job" as money = 0, 0 = falsy, so the if statement = if(false) - therefoe the else statement is evaluated
+
