@@ -100,7 +100,7 @@ if(countryPopulation > averagePopulation) {
     console.log(`${country}'s population is above average`);
 } else {
     console.log(`${country}'s population is ${averagePopulation - countryPopulation} million below average`);
-} */
+}
 
 // Coding Challenge #02
     // - Task 1:
@@ -131,4 +131,20 @@ if(markHigherBMI) {
     console.log(`Mark's BMI (${markMass}) is higher than John's (${johnMass})!`);
 } else {
     console.log(`John's BMI (${johnMass}) is higher than Mark's (${markMass})!`);
-}
+} */
+
+// Type Conversion and Coercion
+    // string to number
+const inputYear = "1991"; // a number as a string
+console.log(inputYear + 18); // returns "199118", not 2009
+    // instead, do...
+console.log(Number(inputYear)); // converts "1991" to a number - 1991
+console.log(Number(inputYear) + 18); // returns 2009
+    // number to string
+console.log(String(23)); // returns "23"
+
+console.log('9' - '5'); // return 4 (num)
+console.log('19' - '13' + '17'); // return "617" (string)
+console.log('19' - '13' + 17); // return 23 (num)
+console.log('123' < 57); // return false
+console.log(5 + 6 + '4' + 9 - 4 - 2); // return 1143 (num)

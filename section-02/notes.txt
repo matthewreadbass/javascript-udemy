@@ -112,3 +112,13 @@ If statements
     block will be executed if condition === false
   }
     - else is optional
+
+Type Conversion and Coercion
+  - Type Conversion is when the user manually converts from one type to another
+    - Number(numberAsString); returns numberAsString as a number datatype
+    - String(number); returns number as a string datatype
+  - Type Coercion is when JS automatically converts from one type to another behind the scenes (implicit)
+    - console.log("I am " + 27 + " years old");
+    - console.log(`I am ${age} years old`);
+    - console.log("23" - "10" - 3); -> returns 10 as a number datatype
+  
