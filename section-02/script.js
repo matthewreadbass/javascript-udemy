@@ -36,6 +36,7 @@ console.log(population < averagePopulation);
 
 let description = `${country} is in ${continent}, and its ${population} million people speak ${language}`;
 console.log(description);
+
 // Coding Challenge #01
     // - Data 1:
 
@@ -79,7 +80,7 @@ const matthewTempLit = `I'm ${firstName}, a ${year - birthYear} year old ${job}!
 console.log(matthewTempLit);
 
 // string using backticks
-console.log(`Backticks aren't just for template literals`); */
+console.log(`Backticks aren't just for template literals`);
 
 
 // if/else statements
@@ -99,4 +100,35 @@ if(countryPopulation > averagePopulation) {
     console.log(`${country}'s population is above average`);
 } else {
     console.log(`${country}'s population is ${averagePopulation - countryPopulation} million below average`);
+} */
+
+// Coding Challenge #02
+    // - Task 1:
+
+let markMass = 78;
+let markHeight = 1.69;
+let johnMass = 92;
+let johnHeight = 1.95;
+
+let markBMI = markMass / markHeight ** 2;
+let johnBMI = johnMass / johnHeight ** 2;
+let markHigherBMI = markBMI > johnBMI;
+
+if(markHigherBMI) {
+    console.log("Mark's BMI is higher than John's!");
+} else {
+    console.log("John's BMI is higher than Mark's!");
+}
+
+    // - Task 2:
+
+markMass = 95;
+markHeight = 1.88;
+johnMass = 85;
+johnHeight = 1.76;
+
+if(markHigherBMI) {
+    console.log(`Mark's BMI (${markMass}) is higher than John's (${johnMass})!`);
+} else {
+    console.log(`John's BMI (${johnMass}) is higher than Mark's (${markMass})!`);
 }
