@@ -61,7 +61,7 @@ johnMass = 85;
 johnHeight = 1.76;
 
 console.log(markBMI, johnBMI);
-console.log(markHigherBMI); */
+console.log(markHigherBMI);
 
 // Stirings and template literal
 
@@ -79,4 +79,24 @@ const matthewTempLit = `I'm ${firstName}, a ${year - birthYear} year old ${job}!
 console.log(matthewTempLit);
 
 // string using backticks
-console.log(`Backticks aren't just for template literals`);
+console.log(`Backticks aren't just for template literals`); */
+
+
+// if/else statements
+const age = 7;
+
+if(age >= 18) {
+    console.log("You can start driving!")
+} else {
+    console.log(`You are too young. Wait another ${18 - age} years :(`);
+}
+
+const country = "England";
+const countryPopulation = 68;
+const averagePopulation = 33;
+
+if(countryPopulation > averagePopulation) {
+    console.log(`${country}'s population is above average`);
+} else {
+    console.log(`${country}'s population is ${averagePopulation - countryPopulation} million below average`);
+}

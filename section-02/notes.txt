@@ -104,3 +104,11 @@ Strings and template literals
       console.log(`String with 
       multiple
       lines`);
+
+If statements
+  if(condition) {
+    block will be executed if condition === true
+  } else {
+    block will be executed if condition === false
+  }
+    - else is optional
