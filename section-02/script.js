@@ -35,7 +35,7 @@ let averagePopulation = 33;
 console.log(population < averagePopulation);
 
 let description = `${country} is in ${continent}, and its ${population} million people speak ${language}`;
-console.log(description); */
+console.log(description);
 // Coding Challenge #01
     // - Data 1:
 
@@ -61,4 +61,22 @@ johnMass = 85;
 johnHeight = 1.76;
 
 console.log(markBMI, johnBMI);
-console.log(markHigherBMI);
+console.log(markHigherBMI); */
+
+// Stirings and template literal
+
+const firstName = 'Matthew';
+const job = 'Sofware Engineer';
+const birthYear = 1994;
+const year = 2021;
+
+// string concatenation
+const matthewConcat = "I'm " + firstName + ", a " + (year - birthYear) + " year old " + job + "!";
+console.log(matthewConcat);
+
+// template literal
+const matthewTempLit = `I'm ${firstName}, a ${year - birthYear} year old ${job}!`;
+console.log(matthewTempLit);
+
+// string using backticks
+console.log(`Backticks aren't just for template literals`);

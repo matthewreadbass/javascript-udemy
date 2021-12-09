@@ -92,3 +92,15 @@ Operator Precedence
     - Certain operators read left-to-right, others from right-to-left
     - Parentheses always come firstName
 
+Strings and template literals
+  - If your string has an apostrophe, you need to use "double quotes"
+  - To save the effort of constantly changing between ", ' & ` for your strings/template literals, you can simply always use `, whether or not you are using a template literal
+  - Template literals make it possible to write multi-line strings without using \n\:
+    - With quotes:
+      console.log("String with \n\
+      multiple \n\
+      lines");
+    - With backticks:
+      console.log(`String with 
+      multiple
+      lines`);
