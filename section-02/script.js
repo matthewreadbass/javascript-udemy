@@ -164,8 +164,6 @@ if(money) {
     console.log("Get a job");
 } // returns "Get a job" as money = 0, 0 = falsy, so the if statement = if(false) - therefoe the else statement is evaluated
 
-*/
-
 // Equality operators
     // "strict" equality operator
 const age = 18;
@@ -186,4 +184,8 @@ if(numNeighbours === 1) {
     console.log('More than 1 border');
 } else {
     console.log('No borders'); // without line 182, this block will always evaluate to false
-}
+} */
+
+// Boolean Logic / Logical operators
+
+
