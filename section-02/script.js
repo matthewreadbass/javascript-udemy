@@ -184,7 +184,7 @@ if(numNeighbours === 1) {
     console.log('More than 1 border');
 } else {
     console.log('No borders'); // without line 182, this block will always evaluate to false
-} */
+}
 
 // Boolean Logic / Logical operators
 const hasDriversLicence = true;
@@ -206,4 +206,48 @@ if(language === 'English' && population < 50 && !isIsland) {
     console.log(`You should live in ${country} :)`);
 } else {
     console.log(`${country} does not meet your criteria :(`);
+} */
+
+// Coding Challenge #03
+    // Data 1
+let dolphinsScore1 = (96 + 108 + 89) / 3;
+let koalasScore1 = (88 + 91 + 110) / 3;
+
+if(dolphinsScore1 > koalasScore1 && dolphinsScore1 > 100) {
+    console.log("Dolphins win!");
+} else if(koalasScore1 > dolphinsScore1 && koalasScore1 > 100) {
+    console.log("Koalas win!");
+} else if(dolphinsScore1 === koalasScore1 && dolphinsScore1 > 100) {
+    console.log("It's a draw");
+} else {
+    console.log("Nobody wins :(");
 }
+
+    // Data 2
+let dolphinsScore2 = (97 + 112 + 101) / 3;
+let koalasScore2 = (109 + 95 + 123) / 3;
+
+if(dolphinsScore2 > koalasScore2 && dolphinsScore2 > 100) {
+    console.log("Dolphins win!");
+} else if(koalasScore2 > dolphinsScore2 && koalasScore2 > 100) {
+    console.log("Koalas win!");
+} else if(dolphinsScore2 === koalasScore2 && dolphinsScore2 > 100) {
+    console.log("It's a draw");
+} else {
+    console.log("Nobody wins :(");
+}
+    
+    // Data 3
+let dolphinsScore3 = (97 + 112 + 101) / 3;
+let koalasScore3 = (109 + 95 + 106) / 3;
+
+if(dolphinsScore3 > koalasScore3 && dolphinsScore3 > 100) {
+    console.log("Dolphins win!");
+} else if(koalasScore3 > dolphinsScore3 && koalasScore3 > 100) {
+    console.log("Koalas win!");
+} else if(dolphinsScore3 === koalasScore3 && dolphinsScore3 > 100) {
+    console.log("It's a draw");
+} else {
+    console.log("Nobody wins :(");
+}
+    
