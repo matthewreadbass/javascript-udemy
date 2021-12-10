@@ -206,7 +206,7 @@ if(language === 'English' && population < 50 && !isIsland) {
     console.log(`You should live in ${country} :)`);
 } else {
     console.log(`${country} does not meet your criteria :(`);
-} */
+}
 
 // Coding Challenge #03
     // Data 1
@@ -249,5 +249,52 @@ if(dolphinsScore3 > koalasScore3 && dolphinsScore3 > 100) {
     console.log("It's a draw");
 } else {
     console.log("Nobody wins :(");
-}
+} */
     
+// The Switch Statement
+const day = "monday";
+
+switch(day) {
+    case "monday": // colon (not semi-colon) after each case
+        console.log("udemy");
+        console.log("code");
+        break // not having a break at the end of each case statement will mean thatthe codecontinues to run
+    case "tuesday": // means the same as -> day === "tuesday"
+        console.log("emails");
+        break
+    case "wednesday": // wednesday and thursdya will have the same output
+    case "thursday":
+        console.log("code");
+        break
+    case "friday":
+        console.log("apprenticeship work");
+        break
+    case "saturday":
+    case "sunday":
+        console.log("relax");
+    default: // default works like else
+        console.log("that's not a day");
+} // will return "udemy" \n\ "code"
+
+const language = 'english';
+
+switch(language) {
+    case 'chinese':
+    case 'mandarin':
+        console.log('MOST number of native speakers!');
+        break
+    case 'spanish':
+        console.log('2nd place in number of native speakers');
+        break
+    case 'english':
+        console.log('3rd place');
+        break
+    case 'hindi':
+        console.log('Number 4');
+        break
+    case 'arabic':
+        console.log('5th most spoken language');
+        break
+    default:
+        console.log('Great language too :D');
+} // will return '3rd place'

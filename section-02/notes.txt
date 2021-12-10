@@ -165,4 +165,26 @@ Boolean Logic/Logical Operators
   - OR operator -> ||
   - NOT operator -> !
     - inverts the boolean value of the (single) variable
-  
+
+The Switch Statement
+  - Same concept as Ruby case statement
+  - evaluates equality
+  - use colon (not semi-colon) after your case
+  - add break keyword at the end of each case statement
+  - you can give multiple cases the same result by following them on from each other (2 & 3 below)
+  - default works like "else"
+    let n = 4;
+    switch(n) {
+      case 1:
+        console.log("One");
+        break
+      case 2:
+      case 3:
+        console.log("Two or three);
+        break
+      case 4:
+        console.log("Four");
+        break
+      default:
+        console.log("Please choose another number");
+    }
