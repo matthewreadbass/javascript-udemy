@@ -187,5 +187,23 @@ if(numNeighbours === 1) {
 } */
 
 // Boolean Logic / Logical operators
+const hasDriversLicence = true;
+const hasGoodVision = false;
 
+console.log(hasDriversLicence && hasGoodVision); // returns false
+console.log(!hasDriversLicence || hasGoodVision); // returns false
+console.log(!hasDriversLicence); // returns true
 
+const isTired = true;
+const shouldDrive = hasDriversLicence && hasGoodVision && !isTired; // you don't want your driver to be tired (ie isTired === true is bad), so use ! (NOT operator)
+
+const country = 'England';
+const language = 'English';
+const isIsland = true;
+const population = 68;
+
+if(language === 'English' && population < 50 && !isIsland) {
+    console.log(`You should live in ${country} :)`);
+} else {
+    console.log(`${country} does not meet your criteria :(`);
+}

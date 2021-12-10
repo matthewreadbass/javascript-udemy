@@ -157,3 +157,12 @@ Equality operators
     - 9 != 8 returns true
     - 9 != "9" returns false
     - 9 != "8" returns true
+
+Boolean Logic/Logical Operators
+  - AND operator -> &&
+    - returns true only if both variables are true
+    - returns true if only one (or more) variable is true
+  - OR operator -> ||
+  - NOT operator -> !
+    - inverts the boolean value of the (single) variable
+  
