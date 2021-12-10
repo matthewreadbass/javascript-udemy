@@ -108,10 +108,14 @@ Strings and template literals
 If statements
   if(condition) {
     block will be executed if condition === true
+  } else if (secondCondition) {
+    block will be executed if condition === false && secondCondition === true
   } else {
     block will be executed if condition === false
   }
-    - else is optional
+  - else if & else are optional
+  - If your if statement's block is only one line, you can ommit the curly braces:
+    if(condition) console.log("I will log to the console if the condition === true");
 
 Type Conversion and Coercion
   - Type Conversion is when the user manually converts from one type to another
@@ -127,3 +131,29 @@ Boolean values
   - Everything else is truthy
   - Falsy values have to be converted in to a boolean to actually be false
     - console.log(Boolean(0));
+
+Equality operators
+  - === => "strict" equality operator
+    - does not perform Type Coercion
+    - only evaluates to true when both values are the same
+    - 9 === 9 returns true
+    - 9 === "9" returns false
+  - == -> "loose" equality operator
+    - does perform Type Coercion
+    - evaluates to true when both values are the same, even in different states
+    - 9 == 9 returns true
+    - 9 == "9" also returns true
+  - !== -> "strict" difference operator
+    - does not perform Type Coercion
+    - only evaluates to true when both values are different
+    - 9 !== 9 returns false
+    - 9 !== 8 returns true
+    - 9 !== "9" returns true
+    - 9 !== "8" returns true
+  - != -> "loose" difference operator
+    - does perform Type Coercion
+    - evaluates to false when both values are the same, even in different states
+    - 9 != 9 returns false
+    - 9 != 8 returns true
+    - 9 != "9" returns false
+    - 9 != "8" returns true

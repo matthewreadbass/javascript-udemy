@@ -147,7 +147,7 @@ console.log('9' - '5'); // return 4 (num)
 console.log('19' - '13' + '17'); // return "617" (string)
 console.log('19' - '13' + 17); // return 23 (num)
 console.log('123' < 57); // return false
-console.log(5 + 6 + '4' + 9 - 4 - 2); // return 1143 (num) */
+console.log(5 + 6 + '4' + 9 - 4 - 2); // return 1143 (num)
 
 // Truthy and falsy values
 
@@ -164,3 +164,26 @@ if(money) {
     console.log("Get a job");
 } // returns "Get a job" as money = 0, 0 = falsy, so the if statement = if(false) - therefoe the else statement is evaluated
 
+*/
+
+// Equality operators
+    // "strict" equality operator
+const age = 18;
+if (age === 18) console.log("You are old enough for a beer"); // returns true
+const age2 = 18;
+if (age2 === "18") console.log("You are old enough for a beer"); // returns false
+    // "loose" equality operator
+const age3 = 18;
+if (age3 == 18) console.log("You are old enough for a beer"); // returns true
+const age4 = 18;
+if (age4 == "18") console.log("You are old enough for a beer"); // returns true
+
+let numNeighbours = prompt('How many neighbour countries does your country have?');
+numNeighbours = Number(numNeighbours);
+if(numNeighbours === 1) {
+    console.log('Only 1 border!');
+} else if (numNeighbours > 1) {
+    console.log('More than 1 border');
+} else {
+    console.log('No borders'); // without line 182, this block will always evaluate to false
+}
