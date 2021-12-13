@@ -13,9 +13,29 @@ Functions
 
     A piece of code that can by used over and over again in our code
     Can hold multiple lines of code
-        function functionName(arguments) {
-            <block-body>
+        function functionName(args) {
+            <block-body>;
         }
     Functions are called/run or invoked
         functionName();
     Used to process data
+
+Function Declarations vs Expressions
+
+    Function Declarations:
+        function functionName(args) {
+            <block-body>;
+        }
+        
+        const constantName = variableName(args);
+
+    Function Expressions:
+        const variableName = function (args) {
+            <block-body>;
+        }
+
+        const constantName = variableName(args);
+
+    With no functionName for function expressions, these functions are called anonymous functions
+    Function declarations can be called in the code before they are defined - function expressions cannot
+

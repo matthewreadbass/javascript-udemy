@@ -10,7 +10,7 @@ if (hasDriversLicense) console.log('I can drive!');
 
 const interface = "Audio"; // will throw "Uncaught SyntxError: Unexpected strict mode reserved word"
 const private = "shh"; // as above
-const if = "if"; // as above */
+const if = "if"; // as above
 
 // Functions
 
@@ -39,4 +39,44 @@ function describeCountry(country, population, capitalCity) {
 
 const describeFinland = describeCountry("Finland", 5.531, "Helsinki");
 const describeScotland = describeCountry("Scotland", 5.45, "Edinburgh");
-const describeItaly = describeCountry("Italy", 59.55, "Rome");
+const describeItaly = describeCountry("Italy", 59.55, "Rome"); */
+
+// Function declarations vs expressions
+
+    // Functions Declarations
+
+function calcAge1(birthYear) {
+    return 2021 - birthYear;
+}
+
+const age1 = calcAge1(1994);
+console.log(age1);
+
+    //Function Expressions
+
+const calcAge2 = function (birthYear) {
+    return 2021 - birthYear;
+}
+
+const age2 = calcAge2(1994);
+console.log(age2);
+
+    // Function Declarations
+
+function percentageOfWorld1(population) {
+    console.log(`${((population / 7900) * 100).toFixed(2)}% of the world population`);
+}
+
+const chinaPopulation = percentageOfWorld1(1441);
+const jamaicaPopulation = percentageOfWorld1(2.961);
+const japanPopulation = percentageOfWorld1(125.8)
+
+    // Function Expressions
+
+const worldPercentage = function (population) {
+    console.log(`${((population / 7900) * 100).toFixed(2)}% of the world population`);
+}
+
+const russiaPopulation = worldPercentage(144.1);
+const walesPopulation = worldPercentage(3.136);
+const peruPopulation = worldPercentage(32.97);
