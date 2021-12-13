@@ -297,7 +297,7 @@ switch(language) {
         break
     default:
         console.log('Great language too :D');
-} // will return '3rd place' */
+} // will return '3rd place'
 
 // The Conditional/Ternary Operator
 
@@ -307,12 +307,19 @@ age >= 18 ? console.log('I love beer') : console.log('No beer for me');
     // instead of...
 
 if (age >= 18) {
-    console.log('I love beer')
+    console.log('I love beer');
 } else {
-    console.log('No beer for me')
+    console.log('No beer for me');
 }
 
 const country = 'England';
 const population = 68;
 
-population > 33 ? console.log(`${country}'s population is above average`) : console.log(`${country}'s population is below average`);
+population > 33 ? console.log(`${country}'s population is above average`) : console.log(`${country}'s population is below average`); */
+
+// Coding Challenge #04
+
+const bill = 275;
+const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2 ;
+
+console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`);
