@@ -188,3 +188,15 @@ The Switch Statement
       default:
         console.log("Please choose another number");
     }
+
+Statements and Expressions:
+
+  Statement - a piece of code that is executed and which does not produce a value, in-and-of-itself
+  Expression - a piece of code that produces a value
+    3 + 4
+    1994
+    "Hello, world"
+    true && false && !false
+  Think of statments as  sentences and expressions as individual words
+  If it ends in a semicolon, then it is a statement
+  Expected in different places

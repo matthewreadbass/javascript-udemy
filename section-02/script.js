@@ -249,7 +249,7 @@ if(dolphinsScore3 > koalasScore3 && dolphinsScore3 > 100) {
     console.log("It's a draw");
 } else {
     console.log("Nobody wins :(");
-} */
+}
     
 // The Switch Statement
 const day = "monday";
@@ -297,4 +297,6 @@ switch(language) {
         break
     default:
         console.log('Great language too :D');
-} // will return '3rd place'
+} // will return '3rd place' */
+
+// 
