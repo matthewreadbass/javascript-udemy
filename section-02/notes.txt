@@ -200,3 +200,9 @@ Statements and Expressions:
   Think of statments as  sentences and expressions as individual words
   If it ends in a semicolon, then it is a statement
   Expected in different places
+
+The Conditional/Ternary Operator:
+
+  As in Ruby
+    condition ? <evaluates-if-true> : <evaluates-if-false>;
+  

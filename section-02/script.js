@@ -299,4 +299,20 @@ switch(language) {
         console.log('Great language too :D');
 } // will return '3rd place' */
 
-// 
+// The Conditional/Ternary Operator
+
+const age = 23;
+age >= 18 ? console.log('I love beer') : console.log('No beer for me');
+    
+    // instead of...
+
+if (age >= 18) {
+    console.log('I love beer')
+} else {
+    console.log('No beer for me')
+}
+
+const country = 'England';
+const population = 68;
+
+population > 33 ? console.log(`${country}'s population is above average`) : console.log(`${country}'s population is below average`);
