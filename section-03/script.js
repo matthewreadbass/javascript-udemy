@@ -111,7 +111,7 @@ const percentageOfWorld3 = population => console.log(`${((population / 7900) * 1
 
 const estoniaPopulation = percentageOfWorld3(1.331);
 const albaniaPopulation = percentageOfWorld3(2.838);
-const macedoniaPopulation = percentageOfWorld3(2.083); */
+const macedoniaPopulation = percentageOfWorld3(2.083);
 
 // Functions Calling Other Functions
 
@@ -134,9 +134,23 @@ function percentageOfWorld4(population) {
 }
 
 function describePopulation(country, population) {
-    console.log(`${country} has ${population} million people, which is about ${percentageOfWorld4(population)}% of the world`);
+    console.log(`${country} has ${population} million people, which is about ${percentageOfWorld4(population)}% of the world.`);
 }
 
 const americaPopulation = describePopulation("America", 329.5);
 const canadaPopulation = describePopulation("Canada", 38.01);
-const mexicoPopulation = describePopulation("Mexico", 128.9);
+const mexicoPopulation = describePopulation("Mexico", 128.9); */
+
+// Reviewing Functions
+
+const calcAge = function (birthYear) {
+    return 2021 - birthYear;
+}
+
+const yearsUntilRetirement = function (birthYear, firstName) {
+    const retirement = 65 - calcAge(1994)
+    return retirement > 0 ? `${firstName} retires in ${retirement} years` : `${firstName} has already retired...` ;
+}
+
+console.log(yearsUntilRetirement(1994, "Matthew"));
+console.log(yearsUntilRetirement(1954, "Arnold"));
