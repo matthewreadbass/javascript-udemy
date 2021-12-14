@@ -44,3 +44,6 @@ Arrow Functions
     Shorthand function expression -> "Arrow Function"
         const variableName = functionName => <block-bod>;
 
+Functions Calling Other Functions
+
+    Helps to abstract your process and keep your code DRY

@@ -79,7 +79,7 @@ const percentageOfWorld2 = function (population) {
 
 const russiaPopulation = percentageOfWorld2(144.1);
 const walesPopulation = percentageOfWorld2(3.136);
-const peruPopulation = percentageOfWorld2(32.97); */
+const peruPopulation = percentageOfWorld2(32.97);
 
 // Arrow Functions
 
@@ -111,4 +111,32 @@ const percentageOfWorld3 = population => console.log(`${((population / 7900) * 1
 
 const estoniaPopulation = percentageOfWorld3(1.331);
 const albaniaPopulation = percentageOfWorld3(2.838);
-const macedoniaPopulation = percentageOfWorld3(2.083);
+const macedoniaPopulation = percentageOfWorld3(2.083); */
+
+// Functions Calling Other Functions
+
+function cutFruitPieces(fruit) {
+    return fruit * 4;
+}
+
+function fruitProcessor(apples, oranges) {
+    const applePieces = cutFruitPieces(apples);
+    const orangePieces = cutFruitPieces(oranges);
+
+    const juice = `Juice with ${applePieces} pieces of apple and ${orangePieces} pieces of orange.`;
+    return juice;
+}
+
+console.log(fruitProcessor(2, 3));
+
+function percentageOfWorld4(population) {
+    return ((population / 7900) * 100).toFixed(2);
+}
+
+function describePopulation(country, population) {
+    console.log(`${country} has ${population} million people, which is about ${percentageOfWorld4(population)}% of the world`);
+}
+
+const americaPopulation = describePopulation("America", 329.5);
+const canadaPopulation = describePopulation("Canada", 38.01);
+const mexicoPopulation = describePopulation("Mexico", 128.9);
