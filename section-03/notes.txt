@@ -39,3 +39,8 @@ Function Declarations vs Expressions
     With no functionName for function expressions, these functions are called anonymous functions
     Function declarations can be called in the code before they are defined - function expressions cannot
 
+Arrow Functions
+
+    Shorthand function expression -> "Arrow Function"
+        const variableName = functionName => <block-bod>;
+

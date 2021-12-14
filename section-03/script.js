@@ -39,7 +39,7 @@ function describeCountry(country, population, capitalCity) {
 
 const describeFinland = describeCountry("Finland", 5.531, "Helsinki");
 const describeScotland = describeCountry("Scotland", 5.45, "Edinburgh");
-const describeItaly = describeCountry("Italy", 59.55, "Rome"); */
+const describeItaly = describeCountry("Italy", 59.55, "Rome");
 
 // Function declarations vs expressions
 
@@ -73,10 +73,42 @@ const japanPopulation = percentageOfWorld1(125.8)
 
     // Function Expressions
 
-const worldPercentage = function (population) {
+const percentageOfWorld2 = function (population) {
     console.log(`${((population / 7900) * 100).toFixed(2)}% of the world population`);
 }
 
-const russiaPopulation = worldPercentage(144.1);
-const walesPopulation = worldPercentage(3.136);
-const peruPopulation = worldPercentage(32.97);
+const russiaPopulation = percentageOfWorld2(144.1);
+const walesPopulation = percentageOfWorld2(3.136);
+const peruPopulation = percentageOfWorld2(32.97); */
+
+// Arrow Functions
+
+const calcAge3 = birthYear => 2021 - birthYear;
+const age3 = calcAge3(1994);
+console.log(age3);
+
+    // with a block
+
+const yearsUntilRetirement = birthYear => {
+    const age = 2021 - birthYear;
+    const retirement = 65 - age;
+    return retirement;
+}
+
+console.log(yearsUntilRetirement(1994));
+
+    // with a block and multiple arguments
+
+    const yearsUntilRetirement2 = (birthYear, firstName) => {
+        const age = 2021 - birthYear;
+        const retirement = 65 - age;
+        return `${firstName} retires in ${retirement} years`;
+    }
+    
+console.log(yearsUntilRetirement2(1987, 'Kim'));
+
+const percentageOfWorld3 = population => console.log(`${((population / 7900) * 100).toFixed(2)}% of the world population`);
+
+const estoniaPopulation = percentageOfWorld3(1.331);
+const albaniaPopulation = percentageOfWorld3(2.838);
+const macedoniaPopulation = percentageOfWorld3(2.083);
