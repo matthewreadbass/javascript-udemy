@@ -153,7 +153,7 @@ const yearsUntilRetirement = function (birthYear, firstName) {
 }
 
 console.log(yearsUntilRetirement(1994, "Matthew"));
-console.log(yearsUntilRetirement(1954, "Arnold")); */
+console.log(yearsUntilRetirement(1954, "Arnold"));
 
 // Coding Challenge #01
 
@@ -167,9 +167,40 @@ function checkWinner(avgDolphins, avgKoalas) {
     } else if (avgKoalas >= 2 * avgDolphins) {
         console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins})`);
     } else {
-        console.log("It's a draw")
+        console.log("No team wins")
     }
 }
 
 checkWinner(calcAverage(44, 23, 71), calcAverage(65, 54, 49));
-checkWinner(calcAverage(85, 54, 41), calcAverage(23, 34, 27));
+checkWinner(calcAverage(85, 54, 41), calcAverage(23, 34, 27)); */
+
+// Introduction To Arrays
+
+const friends = ["Michael", "Steven", "Peter"];
+const years = new Array(1991, 1984, 2008, 2020);
+
+console.log(friends[0]);
+console.log(years[2]);
+
+console.log(friends.length);
+console.log(years[years.length - 1]);
+
+friends[2] = "Kim"; // replaces Peter with Kim
+
+const calcAge5 = function (birthYear) {
+    return 2021 - birthYear;
+}
+const years2 = [1990, 1967, 2002, 2010, 2018];
+const years3 = [calcAge5(years2[0]), calcAge5(years2[1]), calcAge5([years2.length - 1])]
+console.log(years3);
+
+function percentageOfWorld5(population) {
+    return ((population / 7900) * 100).toFixed(2);
+}
+
+const populations = [32, 74, 2.79, 46];
+console.log(populations.length === 4);
+const percentages = [percentageOfWorld5(populations[0]), 
+    percentageOfWorld5(populations[1]), percentageOfWorld5(populations[2]),
+    percentageOfWorld5(populations[3])];
+console.log(percentages);

@@ -42,8 +42,21 @@ Function Declarations vs Expressions
 Arrow Functions
 
     Shorthand function expression -> "Arrow Function"
-        const variableName = functionName => <block-bod>;
+        const functionName = variables => <block-bod>;
 
 Functions Calling Other Functions
 
     Helps to abstract your process and keep your code DRY
+
+Introduction to Arrays
+
+    Same concept as Ruby...
+        const arrayName = [arrayObject1, arrayObject2, arrayObject3];
+        const arrayName = new Array(arrayObject1, arrayObject2, arrayObject3);
+    Access elements using square bracket syntax (0 indexed)
+    .length method still available
+    Mutate array elements with square bracket syntax
+        Arrays are not immutable
+        Can be changed despite being declared as const
+        Whole arrays cannot be changed, but individual items can
+    
