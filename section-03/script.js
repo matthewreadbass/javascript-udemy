@@ -139,7 +139,7 @@ function describePopulation(country, population) {
 
 const americaPopulation = describePopulation("America", 329.5);
 const canadaPopulation = describePopulation("Canada", 38.01);
-const mexicoPopulation = describePopulation("Mexico", 128.9); */
+const mexicoPopulation = describePopulation("Mexico", 128.9);
 
 // Reviewing Functions
 
@@ -153,4 +153,23 @@ const yearsUntilRetirement = function (birthYear, firstName) {
 }
 
 console.log(yearsUntilRetirement(1994, "Matthew"));
-console.log(yearsUntilRetirement(1954, "Arnold"));
+console.log(yearsUntilRetirement(1954, "Arnold")); */
+
+// Coding Challenge #01
+
+const calcAverage = (score1, score2, score3) => {
+    return (score1 + score2 + score3) / 3;
+}
+
+function checkWinner(avgDolphins, avgKoalas) {
+    if(avgDolphins >= 2 * avgKoalas) {
+        console.log(`Dolphins win (${avgDolphins} vs. ${avgKoalas})`);
+    } else if (avgKoalas >= 2 * avgDolphins) {
+        console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins})`);
+    } else {
+        console.log("It's a draw")
+    }
+}
+
+checkWinner(calcAverage(44, 23, 71), calcAverage(65, 54, 49));
+checkWinner(calcAverage(85, 54, 41), calcAverage(23, 34, 27));
