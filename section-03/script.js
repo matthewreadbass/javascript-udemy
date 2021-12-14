@@ -172,7 +172,7 @@ function checkWinner(avgDolphins, avgKoalas) {
 }
 
 checkWinner(calcAverage(44, 23, 71), calcAverage(65, 54, 49));
-checkWinner(calcAverage(85, 54, 41), calcAverage(23, 34, 27)); */
+checkWinner(calcAverage(85, 54, 41), calcAverage(23, 34, 27));
 
 // Introduction To Arrays
 
@@ -203,4 +203,32 @@ console.log(populations.length === 4);
 const percentages = [percentageOfWorld5(populations[0]), 
     percentageOfWorld5(populations[1]), percentageOfWorld5(populations[2]),
     percentageOfWorld5(populations[3])];
-console.log(percentages);
+console.log(percentages); */
+
+// Basic Array Operations (Methods)
+
+const friends = ["Michael", "Steven", "Peter"];
+friends.push("Kim"); // adds "Kim" to the end of the array
+console.log(friends); // returns ["Michael", "Steven", "Peter", "Kim"]
+const newLength = friends.push("Harry") // will save the length of the newly mutated array
+
+friends.unshift("Tom"); // adds "Tom" to the beginning of the array
+
+friends.pop(); // removes the last element of the array
+const popped = friends.pop(); // will store the removed array element
+
+friends.shift(); // removes the last element of the array
+
+console.log(friends.indexOf("Steven")); // will return index number of "Steven"
+console.log(friends.includes("Brian")); // will return false
+
+const neighbours = ["Ireland", "Scotland", "Wales"];
+neighbours.push("Utopia");
+neighbours.pop();
+
+if (neighbours.includes("Germany") === false) {
+    console.log('Probably not a central European country :D');
+}
+
+neighbours[0] = "The Island of Ireland";
+console.log(neighbours);

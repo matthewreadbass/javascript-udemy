@@ -59,4 +59,19 @@ Introduction to Arrays
         Arrays are not immutable
         Can be changed despite being declared as const
         Whole arrays cannot be changed, but individual items can
-    
+
+Basic Array Operations (Methods)
+
+    arrayName.push(item);
+        - adds item to the end of the array
+    arrayName.unshift(item);
+        - adds item to the beginning of the array
+    arrayName.pop();
+        - removes the last item of the array
+    arrayName.shift();
+        - removes the first item of the array
+    arrayName.indexOf(itemName);
+        - returns the index number of itemName
+    arrayName.includes(itemName);
+        - returns true/false, depending on whether itemName is in the array or not
+        - does not perform type coercion
