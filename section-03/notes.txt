@@ -131,3 +131,10 @@ The For Loop
 
     counterStartingValue changes by iterationCondition (ie. counterStartingValue ++) on each repetition
     Loop continues to run while evaluationCondition === true
+
+    continue keyword
+        - exits the current iteration of the loop and continue to the next one
+            if (condition) continue; **** must be inside a loop ****
+    break keyword
+        - exits the entire loop
+            if (condition) break; **** must be inside a loop ****

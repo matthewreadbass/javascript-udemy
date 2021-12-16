@@ -409,7 +409,7 @@ if (mark.calcBMI() > john.calcBMI()) {
     console.log(`${john.fullName()}'s BMI (${Math.round(john.calcBMI())}) is higher than ${mark.fullName()}'s (${Math.round(mark.calcBMI())})!`);
 } else {
     console.log(`${mark.fullName()} and ${john.fullName()} have the same BMI (${Math.round(mark.calcBMI())})`);
-}   */
+}
 
 // The For Loop
 
@@ -431,4 +431,59 @@ for (let rep = 1; rep <=10; rep ++) {
 
 for (let voter = 1; voter <= 50; voter ++) {
     console.log(`Voter number ${voter} is currently voting`);
+} */
+
+const matthew = [
+    'Matthew',
+    'Read',
+    2021 - 1994,
+    'Software Engineer',
+    ['Kim', 'Harry', 'Arthur', 'Benedict']
+];
+
+const types = [];
+for (let i = 0; i < matthew.length; i++) {
+    types[i] = typeof matthew[i]; // could also use .push()
+    console.log(matthew[i])
 }
+
+console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i ++) {
+    ages.push(2021 - years[i]);
+}
+
+console.log(ages);
+
+    // continue - only logs strings
+    for (let i = 0; i < matthew.length; i++) {
+        if (typeof matthew[i] !== 'string') continue;
+        console.log(matthew[i])
+    }
+
+    // break - breaks with number
+    for (let i = 0; i < matthew.length; i++) {
+        if (typeof matthew[i] === 'number') break;
+        console.log(matthew[i])
+    }
+
+const populations = [32, 74, 2.79, 46];
+
+    // old method
+function percentageOfWorld5(population) {
+    return ((population / 7900) * 100).toFixed(2);
+}
+const percentages = [percentageOfWorld5(populations[0]), 
+    percentageOfWorld5(populations[1]), percentageOfWorld5(populations[2]),
+    percentageOfWorld5(populations[3])];
+console.log(percentages);
+
+    // new method
+const percentages2 = [];
+for (let i = 0; i < populations.length; i ++) {
+    percentages2.push(((populations[i] / 7900) * 100).toFixed(2))
+}
+console.log(percentages2);
