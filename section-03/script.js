@@ -431,7 +431,7 @@ for (let rep = 1; rep <=10; rep ++) {
 
 for (let voter = 1; voter <= 50; voter ++) {
     console.log(`Voter number ${voter} is currently voting`);
-} */
+}
 
 const matthew = [
     'Matthew',
@@ -486,4 +486,33 @@ const percentages2 = [];
 for (let i = 0; i < populations.length; i ++) {
     percentages2.push(((populations[i] / 7900) * 100).toFixed(2))
 }
-console.log(percentages2);
+console.log(percentages2); */
+
+// Looping backwards and loops in loops
+
+const matthew = [
+    'Matthew',
+    'Read',
+    2021 - 1994,
+    'Software Engineer',
+    ['Kim', 'Harry', 'Arthur', 'Benedict']
+];
+
+for (let i = matthew.length; i >= 0; i--) {
+    console.log(matthew[i]);
+}
+
+for (let exercise = 1; exercise <= 3; exercise ++) {
+    console.log(`Starting exercise ${exercise}`);
+    for (let rep = 1; rep <= 5; rep ++) {
+        console.log(`Lifting weight: Repetition number ${rep}`);
+    }
+}
+
+const listOfNeighbours = [['Canada', 'Mexico'], ['Spain'], ['Norway', 'Sweden', 'Russia']];
+
+for (let i = 0; i < listOfNeighbours.length; i ++) {
+    for (let x = 0; x < listOfNeighbours[i].length; x ++) {
+        console.log(listOfNeighbours[i][x]);
+    }
+}

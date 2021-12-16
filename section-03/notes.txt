@@ -138,3 +138,8 @@ The For Loop
     break keyword
         - exits the entire loop
             if (condition) break; **** must be inside a loop ****
+
+Looping backwards and loops in loops
+
+    As looping forward, but starting with a high number counter and decreasing the counter each time
+    Do a loop in a loop
