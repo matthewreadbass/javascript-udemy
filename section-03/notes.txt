@@ -146,4 +146,8 @@ Looping backwards and loops in loops
 
 The While Loop
 
-    
+    while (condition) {
+        <while-loop-block
+    }
+    Create variables (counters etc) outside of the while loop
+    Runs while condition === true

@@ -552,7 +552,7 @@ const calcTip = function(bill) {
 }
 
 for (let i = 0; i < bills.length; i ++) {
-    calcTip(bills[i])
+    calcTip(bills[i]);
 }
 
 console.log(bills);
@@ -561,11 +561,10 @@ console.log(totals);
 
 function calcAverage(arr) {
     let output = 0;
-    for (let i = 0; i < arr.length; i++) {
-        output += arr[i];
-    }
-    output /= arr.length;
-    return output;
+        for (let i = 0; i < arr.length; i++) {
+            output += arr[i];
+        }
+    return output / arr.length;
 }
 
 console.log(calcAverage(bills));
