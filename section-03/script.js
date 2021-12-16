@@ -361,22 +361,28 @@ console.log(matthew.getSummary()); */
 const mark = {
     firstName: 'Mark',
     lastName: 'Miller',
+    fullName: function () {
+        return `${this.firstName} ${this.lastName}`
+    },
     mass: 78,
     height: 1.69,
     calcBMI: function () {
         this.bmi = this.mass / this.height ** 2;
-        return Math.round(this.bmi);
+        return this.bmi;
     }
 }
 
 const john = {
     firstName: 'John',
     lastName: 'Smith',
+    fullName: function () {
+        return `${this.firstName} ${this.lastName}`
+    },
     mass: 92,
     height: 1.95,
     calcBMI: function () {
         this.bmi = this.mass / this.height ** 2;
-        return Math.round(this.bmi);
+        return this.bmi;
     }
 }
 
@@ -384,9 +390,9 @@ console.log(mark.calcBMI());
 console.log(john.calcBMI());
 
 if (mark.calcBMI() > john.calcBMI()) {
-    console.log(`Mark's BMI (${mark.calcBMI()}) is higher than John's (${john.calcBMI()})!`);
+    console.log(`${mark.fullName()}'s BMI (${Math.round(mark.calcBMI())}) is higher than ${john.fullName()}'s (${Math.round(john.calcBMI())})!`);
 } else if (mark.calcBMI() < john.calcBMI()) {
-    console.log(`John's BMI (${john.calcBMI()}) is higher than Mark's (${mark.calcBMI()})!`);
+    console.log(`${john.fullName()}'s BMI (${Math.round(john.calcBMI())}) is higher than ${mark.fullName()}'s (${Math.round(mark.calcBMI())})!`);
 } else {
-    console.log(`Mark and John have the same BMI (${mark.calcBMI()})`);
+    console.log(`${mark.fullName()} and ${john.fullName()} have the same BMI (${Math.round(mark.calcBMI())})`);
 }
