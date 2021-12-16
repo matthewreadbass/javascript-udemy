@@ -121,3 +121,13 @@ Object Methods
                 return this.key3;
             }
         }
+
+The For Loop
+
+    Automate repetetive tasks
+        for (counterStartingValue; evaluationCondition; iterationCondition) {
+            <for-loop-body>;
+        }
+
+    counterStartingValue changes by iterationCondition (ie. counterStartingValue ++) on each repetition
+    Loop continues to run while evaluationCondition === true

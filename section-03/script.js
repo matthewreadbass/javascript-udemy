@@ -354,7 +354,21 @@ console.log(matthew.calcAge());
         return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he has ${this.hasDriversLicense === true ? 'a' : 'no'} driver's license`;
     }
 
-console.log(matthew.getSummary()); */
+console.log(matthew.getSummary());
+
+const myCountry = {
+    country: 'England',
+    capital: 'London',
+    language: 'English',
+    population: 55.98,
+    neighbours: ['Ireland', 'Scotland', 'Wales'],
+    describe: function () {
+        return `${this.country} has ${this.population} million ${this.language}-speaking people, ${this.neighbours.length} neighbouring countries
+and a capital called ${this.capital}`;
+    }
+};
+
+console.log(myCountry.describe());
 
 // Coding Challenge #03
 
@@ -395,4 +409,26 @@ if (mark.calcBMI() > john.calcBMI()) {
     console.log(`${john.fullName()}'s BMI (${Math.round(john.calcBMI())}) is higher than ${mark.fullName()}'s (${Math.round(mark.calcBMI())})!`);
 } else {
     console.log(`${mark.fullName()} and ${john.fullName()} have the same BMI (${Math.round(mark.calcBMI())})`);
+}   */
+
+// The For Loop
+
+    // instead of...
+console.log("Lifting weights: Repetition number 1");
+console.log("Lifting weights: Repetition number 2");
+console.log("Lifting weights: Repetition number 3");
+console.log("Lifting weights: Repetition number 4");
+console.log("Lifting weights: Repetition number 5");
+console.log("Lifting weights: Repetition number 6");
+console.log("Lifting weights: Repetition number 7");
+console.log("Lifting weights: Repetition number 8");
+console.log("Lifting weights: Repetition number 9");
+console.log("Lifting weights: Repetition number 10");
+    // write...
+for (let rep = 1; rep <=10; rep ++) {
+    console.log(`Lifting weights: Repetition number ${rep}`);
+}
+
+for (let voter = 1; voter <= 50; voter ++) {
+    console.log(`Voter number ${voter} is currently voting`);
 }
