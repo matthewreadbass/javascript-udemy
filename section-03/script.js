@@ -471,7 +471,6 @@ console.log(ages);
     }
 
 const populations = [32, 74, 2.79, 46];
-
     // old method
 function percentageOfWorld5(population) {
     return ((population / 7900) * 100).toFixed(2);
@@ -486,7 +485,7 @@ const percentages2 = [];
 for (let i = 0; i < populations.length; i ++) {
     percentages2.push(((populations[i] / 7900) * 100).toFixed(2))
 }
-console.log(percentages2); */
+console.log(percentages2);
 
 // Looping backwards and loops in loops
 
@@ -515,4 +514,27 @@ for (let i = 0; i < listOfNeighbours.length; i ++) {
     for (let x = 0; x < listOfNeighbours[i].length; x ++) {
         console.log(listOfNeighbours[i][x]);
     }
+} */
+
+// The While Loop
+
+let rep = 1;
+while (rep <=10) {
+    console.log(`Lifting weights: Repetition number ${rep}`);
+    rep ++;
 }
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+while (dice !== 6){
+    console.log(`You rolled a ${dice}`);
+    dice = Math.trunc(Math.random() * 6) + 1;
+}
+
+const populations = [32, 74, 2.79, 46];
+const percentages3 = [];
+let i = 0;
+while (i < populations.length) {
+    percentages3.push(((populations[i] / 7900) * 100).toFixed(2));
+    i++;
+}
+console.log(percentages3);

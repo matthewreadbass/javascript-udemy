@@ -143,3 +143,7 @@ Looping backwards and loops in loops
 
     As looping forward, but starting with a high number counter and decreasing the counter each time
     Do a loop in a loop
+
+The While Loop
+
+    
