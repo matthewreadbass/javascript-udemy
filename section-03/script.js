@@ -248,7 +248,7 @@ const calcTip = function(bills) {
 }
 
 const bills = [125, 555, 44];
-console.log(calcTip(bills)); */
+console.log(calcTip(bills));
 
 // Objects
 
@@ -314,4 +314,44 @@ and a capital called ${myCountry.capital}`);
 myCountry.population = myCountry.population + 2;
 // re-print statement
 console.log(`${myCountry.country} has ${myCountry.population} million ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring countries
-and a capital called ${myCountry.capital}`);
+and a capital called ${myCountry.capital}`); */
+
+// Object Methods
+
+    const matthew = {
+        firstName: 'Matthew',
+        lastName: 'Read',
+        birthYear: 1994,
+        job: 'Software Engineer',
+        friends:['Kim', 'Harry', 'Arthur', 'Benedict'],
+        hasDriversLicense: true,
+        // add a function as the value of a key value pair
+        calcAge: function (birthYear) {
+            return 2021 - birthYear;
+        }
+    };
+
+console.log(matthew.calcAge(1994));
+console.log(matthew['calcAge'](1994));
+
+    // Pass in other values from the object
+matthew.calcAge = function () {
+    return 2021 - this.birthYear;
+}
+
+console.log(matthew.calcAge());
+
+    // use this keyword to save new values
+    matthew.calcAge = function () {
+        this.age = 2021 - this.birthYear;
+        return this.age;
+    }
+
+console.log(matthew.calcAge());
+
+    //Challenge - crate a property that will log "Matthew is a 27-year old software developer, and he has a/no driver's license"
+    matthew.getSummary = function () {
+        return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he has ${this.hasDriversLicense === true ? 'a' : 'no'} driver's license`;
+    }
+
+console.log(matthew.getSummary());

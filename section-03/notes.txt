@@ -92,3 +92,32 @@ Objects
     Add to object using both syntaxes
         objectName.propertyName = 'valueName';
         objectName['propertyName'] = 'valueName;
+
+Object Methods
+
+    Possible to create a key/value pair where the value is a function
+    Syntax:
+        const objectName = {
+            key1: value1,
+            key2: value2,
+            keyFunctionName: function (arguments) {
+                <function-body>;
+            }
+        }
+    Access other values from the object in your function using the "this" keyword
+        const objectName = {
+            key1: value1,
+            key2: value2,
+            keyFunctionName: function (arguments) {
+                return this.key1 - 5;
+            }
+        }
+    Use "this" keyword to store new values on the object
+        const objectName = {
+            key1: value1,
+            key2: value2,
+            keyFunctionName: function (arguments) {
+                this.key3 = this.key2 + 1;
+                return this.key3;
+            }
+        }
