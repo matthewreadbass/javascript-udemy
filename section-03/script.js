@@ -275,3 +275,43 @@ const myCountry = {
     population: 55.98,
     neighbours: ['Ireland', 'Scotland', 'Wales']
 };
+
+    // dot notation
+console.log(matthew.lastName); // will log 'Read'
+
+    // bracket notation
+console.log(matthew['age']); // will log 27
+
+    // bracket notation with evaluated input value
+const nameKey = 'Name';
+console.log(matthew['first' + nameKey]); // will log 'Matthew' - 'first' + nameKey = 'first' + 'Name' = 'firstName'
+console.log(matthew['last' + nameKey]); // will log 'Read' - 'last' + nameKey = 'last' + 'Name' = 'lastName'
+
+const interestedIn = prompt('What do you want to know about Matthew? Choose between firstName, lastName, age, job and friends'); // saving one of the object properties to interestedIn
+console.log(matthew[interestedIn]);
+
+if(matthew[interestedIn]) {
+    console.log(matthew[interestedIn]);
+} else {
+    console.log("I'm afraid that that information is not available. Choose between firstName, lastName, age, job and friends");
+}
+
+    // add to object using both syntaxes
+matthew.location = 'Bristol';
+matthew['instrument'] = 'Double Bass';
+
+    // Challenge: return "Matthew has 3 friends, and his best friend is called Kim"
+    // without hard-coding the information
+
+const numFriends = matthew.friends.length;
+const bestFriend = matthew.friends[0];
+console.log(`Matthew has ${numFriends} friends, and his best friend is called ${bestFriend}`);
+
+// print statement to console
+console.log(`${myCountry.country} has ${myCountry.population} million ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring countries
+and a capital called ${myCountry.capital}`);
+// increase popultaion by 2 million
+myCountry.population = myCountry.population + 2;
+// re-print statement
+console.log(`${myCountry.country} has ${myCountry.population} million ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring countries
+and a capital called ${myCountry.capital}`);

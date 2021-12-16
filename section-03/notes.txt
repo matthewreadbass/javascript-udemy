@@ -76,6 +76,19 @@ Basic Array Operations (Methods)
         - returns true/false, depending on whether itemName is in the array or not
         - does not perform type coercion
 
-Introduction to Objects
+Objects
 
-    
+    An Object is a collection of key value pairs (a hash)
+    Keys are also called properties
+    Get a property from an object:
+        - Dot Notation
+            objectName.propertyName;
+        - Brackets Notation
+            objectName['propertyName']
+        propertyName can be accesed with an evaluated value
+            const propertyKey = 'Name';
+            objectName['property' + propertyKey];
+    Returns undefined if the property doesn't exist
+    Add to object using both syntaxes
+        objectName.propertyName = 'valueName';
+        objectName['propertyName'] = 'valueName;
