@@ -559,9 +559,6 @@ console.log(bills);
 console.log(tips);
 console.log(totals);
 
-
-let averagesArray = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52]
-
 function calcAverage(arr) {
     let output = 0;
     for (let i = 0; i < arr.length; i++) {
@@ -571,4 +568,6 @@ function calcAverage(arr) {
     return output;
 }
 
-console.log(calcAverage(averagesArray));
+console.log(calcAverage(bills));
+console.log(calcAverage(tips));
+console.log(calcAverage(totals));
