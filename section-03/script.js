@@ -514,7 +514,7 @@ for (let i = 0; i < listOfNeighbours.length; i ++) {
     for (let x = 0; x < listOfNeighbours[i].length; x ++) {
         console.log(listOfNeighbours[i][x]);
     }
-} */
+}
 
 // The While Loop
 
@@ -537,4 +537,38 @@ while (i < populations.length) {
     percentages3.push(((populations[i] / 7900) * 100).toFixed(2));
     i++;
 }
-console.log(percentages3);
+console.log(percentages3); */
+
+// Coding Challenge #04
+
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+
+const calcTip = function(bill) {
+    const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2 ;
+    tips.push(tip);
+    totals.push(bill + tip);
+}
+
+for (let i = 0; i < bills.length; i ++) {
+    calcTip(bills[i])
+}
+
+console.log(bills);
+console.log(tips);
+console.log(totals);
+
+
+let averagesArray = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52]
+
+function calcAverage(arr) {
+    let output = 0;
+    for (let i = 0; i < arr.length; i++) {
+        output += arr[i];
+    }
+    output /= arr.length;
+    return output;
+}
+
+console.log(calcAverage(averagesArray));
