@@ -314,7 +314,7 @@ and a capital called ${myCountry.capital}`);
 myCountry.population = myCountry.population + 2;
 // re-print statement
 console.log(`${myCountry.country} has ${myCountry.population} million ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring countries
-and a capital called ${myCountry.capital}`); */
+and a capital called ${myCountry.capital}`);
 
 // Object Methods
 
@@ -354,4 +354,39 @@ console.log(matthew.calcAge());
         return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he has ${this.hasDriversLicense === true ? 'a' : 'no'} driver's license`;
     }
 
-console.log(matthew.getSummary());
+console.log(matthew.getSummary()); */
+
+// Coding Challenge #03
+
+const mark = {
+    firstName: 'Mark',
+    lastName: 'Miller',
+    mass: 78,
+    height: 1.69,
+    calcBMI: function () {
+        this.bmi = this.mass / this.height ** 2;
+        return Math.round(this.bmi);
+    }
+}
+
+const john = {
+    firstName: 'John',
+    lastName: 'Smith',
+    mass: 92,
+    height: 1.95,
+    calcBMI: function () {
+        this.bmi = this.mass / this.height ** 2;
+        return Math.round(this.bmi);
+    }
+}
+
+console.log(mark.calcBMI());
+console.log(john.calcBMI());
+
+if (mark.calcBMI() > john.calcBMI()) {
+    console.log(`Mark's BMI (${mark.calcBMI()}) is higher than John's (${john.calcBMI()})!`);
+} else if (mark.calcBMI() < john.calcBMI()) {
+    console.log(`John's BMI (${john.calcBMI()}) is higher than Mark's (${mark.calcBMI()})!`);
+} else {
+    console.log(`Mark and John have the same BMI (${mark.calcBMI()})`);
+}
