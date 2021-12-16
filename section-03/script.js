@@ -203,7 +203,7 @@ console.log(populations.length === 4);
 const percentages = [percentageOfWorld5(populations[0]), 
     percentageOfWorld5(populations[1]), percentageOfWorld5(populations[2]),
     percentageOfWorld5(populations[3])];
-console.log(percentages); */
+console.log(percentages);
 
 // Basic Array Operations (Methods)
 
@@ -248,4 +248,30 @@ const calcTip = function(bills) {
 }
 
 const bills = [125, 555, 44];
-console.log(calcTip(bills));
+console.log(calcTip(bills)); */
+
+// Objects
+
+const matthewArray = [
+    'Matthew',
+    'Read',
+    2021 - 1994,
+    'Software Engineer',
+    ['Kim', 'Harry', 'Arthur', 'Benedict']
+]; // can only access via index position
+
+const matthew = {
+    firstName: 'Matthew',
+    lastName: 'Read',
+    age: 2021 - 1994,
+    job: 'Software Engineer',
+    friends:['Kim', 'Harry', 'Arthur', 'Benedict']
+}; // Object created using "Object Literal" syntax
+
+const myCountry = {
+    country: 'England',
+    capital: 'London',
+    language: 'English',
+    population: 55.98,
+    neighbours: ['Ireland', 'Scotland', 'Wales']
+};
