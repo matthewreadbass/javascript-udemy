@@ -232,3 +232,20 @@ if (neighbours.includes("Germany") === false) {
 
 neighbours[0] = "The Island of Ireland";
 console.log(neighbours);
+
+// Coding Challenge #02
+
+const calcTip = function(bills) {
+    let i = 0
+    const tips = [];
+    const total = [];
+    if (i < bills.length) {
+        const tip = bills[i] >= 50 && bills[i] <= 300 ? bills[i] * 0.15 : bills[i] * 0.2 ;
+        tips.push(tip);
+        total.push(bills[i] + tip);
+    }
+    return `bills = ${bills}, tips = ${tips}, total = ${total}`;
+}
+
+const bills = [125, 555, 44];
+console.log(calcTip(bills));
