@@ -1,18 +1,11 @@
-configure user snippets to automate things that you are constantly doing (ie. console.log())
-    - File -> Preferences -> User Snippets -> New Global Snippets File -> Write snippet (example provided)
-    - "cl" === console.log();
+index.html is always the name of the main file in any project
 
-Use Live Server to refresh documents on save:
-    - Install Live Server
-    - Click Go Live to run server
-        - Opens document for you
-        - Or run wih Node JS...
+main element is html tag
+    <html>
 
-Debugging
-    - Aswell as console.log(), also available are console.warn() & console.error()
-        - Throw warning and error respectively to the console
-    - Also available is console.table(<object-name>);
-        - Logs the object in a table
-        - Really useful for larger objects
-    - Access debugger in chrome on the 'Sources' tab of the dev tools
-        - JS also has 'debugger' keyword to access debugger directly from your text editor
+Inside html tag:
+    <head>
+    <body>
+        Describe the document
+
+! + tab fills out the doctype/head/body etc.
