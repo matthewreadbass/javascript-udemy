@@ -7,3 +7,10 @@ Use Live Server to refresh documents on save:
     - Click Go Live to run server
         - Opens document for you
         - Or run wih Node JS...
+
+Debugging
+    - Aswell as console.log(), also available are console.warn() & console.error()
+        - Throw warning and error respectively to the console
+    - Also available is console.table(<object-name>);
+        - Logs the object in a table
+        - Really useful for larger objects

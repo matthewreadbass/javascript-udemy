@@ -20,7 +20,7 @@ const calcTempAmplitude = function (temps) {
   return max - min;
 };
 const amplitude = calcTempAmplitude(temperatures);
-console.log(amplitude); */
+console.log(amplitude);
 
 // Calculate the amplitude of an array of temperatures - the thermometer will ocassionally throw an error
 //     Function should be able to accept multiple arrays
@@ -43,4 +43,18 @@ const calcTempAmplitude = function (t1, t2) {
   return max - min;
 };
 const amplitude = calcTempAmplitude(temperatures);
-console.log(amplitude);
+console.log(amplitude); */
+
+// Debugging
+
+const matthew = {
+  firstName: "Matthew",
+  lastName: "Read",
+  age: 27,
+  job: "Software Engineer",
+};
+
+console.log("logging");
+console.warn("warning");
+console.error("error...ing??");
+console.table(matthew); // Prints a table of above matthew object
