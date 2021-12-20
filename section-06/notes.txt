@@ -9,3 +9,15 @@ Inside html tag:
         Describe the document
 
 ! + tab fills out the doctype/head/body etc.
+
+Attributes describe elements
+
+<a> - Anchor (inline) - add url link
+<img> - image
+
+Use ids and classes to identify elements
+    - Can add to any elements
+    - id has to be unique, classes don't have to be
+
+<div> - box/container
+
