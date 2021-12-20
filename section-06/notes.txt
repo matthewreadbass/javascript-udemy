@@ -31,7 +31,26 @@ Use CSS Selectors to choose what is being styled
 
 Child elements inherit from parent elements
 
+Select multiple elements by seperating them with a comma
+    input, button {}
+
 Dot selector for classes -> .first {} will style any elements with a class name of "first"
 
 Hash selector for ids -> #your-name {} will style the element with id of "your-name"
 
+The Box Model:
+    - Content - all the stuff in the box
+    - Width - specifies the width of the content
+    - Height - specifies the height of the content
+    - Padding - a transparent area around the content
+    - Border - goes around the padding and the content
+    - Margin - the space outside of/between boxes
+    - Fill area - everything but the margin
+        - All are optional
+    Reset padding/margins etc before doing anything else
+        - Global Reset
+        - Star selector -> * {} selects all of the elements on the page
+
+Child Selector
+    - #idname class-selector
+        Selects classes with the specified class that are inside the first element
