@@ -21,3 +21,17 @@ Use ids and classes to identify elements
 
 <div> - box/container
 
+Write CSS in an html file using the style element
+    - Put in the head elemenent
+
+Use CSS Selectors to choose what is being styled
+    - Also written in seperate CSS file
+        - style.css
+        - link using the <link> element
+
+Child elements inherit from parent elements
+
+Dot selector for classes -> .first {} will style any elements with a class name of "first"
+
+Hash selector for ids -> #your-name {} will style the element with id of "your-name"
+

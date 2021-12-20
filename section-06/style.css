@@ -1,0 +1,18 @@
+body {
+  background-color: rgba(214, 196, 150, 0.767);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 20px;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+.first {
+  color: blue;
+}
+
+#your-name {
+  background: hotpink;
+  border: 5px solid #444;
+}
