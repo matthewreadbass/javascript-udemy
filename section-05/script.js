@@ -43,7 +43,7 @@ const calcTempAmplitude = function (t1, t2) {
   return max - min;
 };
 const amplitude = calcTempAmplitude(temperatures);
-console.log(amplitude); */
+console.log(amplitude);
 
 // Debugging
 
@@ -57,4 +57,27 @@ const matthew = {
 console.log("logging");
 console.warn("warning");
 console.error("error...ing??");
-console.table(matthew); // Prints a table of above matthew object
+console.table(matthew); // Prints a table of above matthew object  */
+
+// Coding Challenge #01
+
+// Given an array of maximum forecasted temperatures, display a string with these temperatures
+//      Eg. [17, 21, 23] will print "... 17°C in 1 days ... 21°C in 2 days ... 23°C in 3 days"
+
+const printForecast = function (arr) {
+  const output = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (i === 0) {
+      output.push(`... ${i}°C in 1 day `);
+    } else {
+      output.push(`... ${i}°C in ${i + 1} days `);
+    }
+  }
+  output.push("...");
+  return output.join("");
+};
+
+const testData1 = [17, 21, 23];
+const testData2 = [12, 5, -5, 0, 4];
+
+console.log(printForecast(testData1));
