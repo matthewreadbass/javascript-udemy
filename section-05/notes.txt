@@ -14,3 +14,5 @@ Debugging
     - Also available is console.table(<object-name>);
         - Logs the object in a table
         - Really useful for larger objects
+    - Access debugger in chrome on the 'Sources' tab of the dev tools
+        - JS also has 'debugger' keyword to access debugger directly from your text editor
