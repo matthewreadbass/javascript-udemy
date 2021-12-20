@@ -1,0 +1,9 @@
+configure user snippets to automate things that you are constantly doing (ie. console.log())
+    - File -> Preferences -> User Snippets -> New Global Snippets File -> Write snippet (example provided)
+    - "cl" === console.log();
+
+Use Live Server to refresh documents on save:
+    - Install Live Server
+    - Click Go Live to run server
+        - Opens document for you
+        - Or run wih Node JS...
