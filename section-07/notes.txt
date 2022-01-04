@@ -32,3 +32,7 @@ Handling Click Events
             document.querySelector('.className').addEventListener('typeOfEvent', function() {<function-body>});
             We don't call the function
                 JS engine will call the function as soon as the event happens
+
+DOM also includes CSS styles
+
+    Can change styling with DOM manipulation

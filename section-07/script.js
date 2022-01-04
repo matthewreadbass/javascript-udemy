@@ -19,30 +19,39 @@ document.querySelector('.check').addEventListener('click', function () {
   console.log(guess); // logs guess to the console
 
   if (!guess) {
+    // when there is no input
     document.querySelector('.message').textContent = 'No Number!';
     // if no number given, guess evaluates to falsey
     // therefore !guess evaluates to truthy & the block will run
   } else if (guess === secretNumber) {
+    // when the guess is correct
     if (score > 1) {
       document.querySelector('.message').textContent = 'Correct Number!';
+      document.querySelector('body').style.backgroundColor = '#60b347';
+      document.querySelector('.number').style.width = '30rem';
     } else {
       document.querySelector('.message').textContent = 'You lost the game!';
+      document.querySelector('body').style.backgroundColor = '#ff0000';
     }
   } else if (guess > secretNumber) {
+    // when the guess is too high
     if (score > 1) {
       document.querySelector('.message').textContent = 'Too high!';
       score--;
       document.querySelector('.score').textContent = score;
     } else {
       document.querySelector('.message').textContent = 'You lost the game!';
+      document.querySelector('body').style.backgroundColor = '#ff0000';
     }
   } else if (guess < secretNumber) {
+    // when the guess is too low
     if (score > 1) {
       document.querySelector('.message').textContent = 'Too low!';
       score--;
       document.querySelector('.score').textContent = score;
     } else {
       document.querySelector('.message').textContent = 'You lost the game!';
+      document.querySelector('body').style.backgroundColor = '#ff0000';
     }
   }
 });
