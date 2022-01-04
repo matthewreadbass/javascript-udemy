@@ -22,3 +22,13 @@ Selecting and Manipulating elements
     Use .textContent to show text content of selected element - document.querySelector('.className').textContent;
     Can use to set content tosomething elements
         document.querySelector('.className').textContent = 'New String';
+
+Handling Click Events
+
+    Code reacts to something that happens in the DOM
+    Use an 'event listener'
+        An event is something that happens on the page
+        Use an event listener to wait for a certain event to happen and then react to interact
+            document.querySelector('.className').addEventListener('typeOfEvent', function() {<function-body>});
+            We don't call the function
+                JS engine will call the function as soon as the event happens
