@@ -1,7 +1,4 @@
-    .prettierrc file is the prettier config file for the project
-
-    Select an element in JS with document.querySelector('.className');
-    Use .textContent to show text content of selected element - document.querySelector('.className').textContent;
+    (.prettierrc file is the prettier config file for the project)
 
 What is the DOM/DOM Manipulation?
 
@@ -18,3 +15,10 @@ What is the DOM/DOM Manipulation?
     
     DOM !== JS
         DOM is part of web APIs
+
+Selecting and Manipulating elements
+
+    Select an element in JS with document.querySelector('.className');
+    Use .textContent to show text content of selected element - document.querySelector('.className').textContent;
+    Can use to set content tosomething elements
+        document.querySelector('.className').textContent = 'New String';
