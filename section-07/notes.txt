@@ -1,0 +1,6 @@
+.prettierrc file is the prettier config file for the project
+
+Select an element in JS with document.querySelector('.className');
+
+Use .textContent to show text content of selected element - document.querySelector('.className').textContent;
+
