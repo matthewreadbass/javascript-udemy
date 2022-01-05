@@ -25,7 +25,7 @@ document.querySelector('.check').addEventListener('click', function () {
     // if no number given, guess evaluates to falsey
     // therefore !guess evaluates to truthy & the block will run
   } else if (guess === secretNumber) {
-    // when the guess is correct
+    // when guess is correct
     if (score > 1) {
       document.querySelector('.message').textContent = 'Correct Number!';
       document.querySelector('body').style.backgroundColor = '#60b347';
@@ -39,20 +39,11 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.message').textContent = 'You lost the game!';
       document.querySelector('body').style.backgroundColor = '#ff0000';
     }
-  } else if (guess > secretNumber) {
-    // when the guess is too high
+    // when guess is wrong
+  } else if (guess !== secretNumber) {
     if (score > 1) {
-      document.querySelector('.message').textContent = 'Too high!';
-      score--;
-      document.querySelector('.score').textContent = score;
-    } else {
-      document.querySelector('.message').textContent = 'You lost the game!';
-      document.querySelector('body').style.backgroundColor = '#ff0000';
-    }
-  } else if (guess < secretNumber) {
-    // when the guess is too low
-    if (score > 1) {
-      document.querySelector('.message').textContent = 'Too low!';
+      document.querySelector('.message').textContent =
+        guess > secretNumber ? 'Too high!' : 'Too low!';
       score--;
       document.querySelector('.score').textContent = score;
     } else {
