@@ -34,6 +34,10 @@ const setScore = function (score) {
   document.querySelector('.score').textContent = score;
 };
 
+const setHighcore = function (score) {
+  document.querySelector('.highscore').textContent = score;
+};
+
 document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value); // saves the guessed number to the value 'guess'
   console.log(guess); // logs guess to the console
@@ -41,8 +45,6 @@ document.querySelector('.check').addEventListener('click', function () {
   if (!guess) {
     // when there is no input
     displayMessage('No Number!');
-    // if no number given, guess evaluates to falsey
-    // therefore !guess evaluates to truthy & the block will run
   } else if (guess === secretNumber) {
     // when guess is correct
     if (score > 1) {
@@ -51,7 +53,7 @@ document.querySelector('.check').addEventListener('click', function () {
       setNumberWidth('30rem');
       setNumber(secretNumber);
       if (score > highscore) {
-        document.querySelector('.highscore').textContent = score;
+        setHighscore(score);
       }
     } else {
       displayMessage('You lost the game!');
