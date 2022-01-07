@@ -8,7 +8,7 @@ A high-level overview of JS
 
     - High-level - developer does not have to manage resources manually as it is all automated
     - Garbage-collected - automatically cleans the memory, so the developer doesn't have to
-    - Interpreted or just-in-time complied - Doesn't require compiling/interpretting before running
+    - Interpreted or just-in-time compiled - Doesn't require compiling/interpretting before running
     - Multi-paradigm - Procedural/Object-Oriented/Functional Programming all in one
     - Prototype-based object-oriented - Prototypal inheritance (similar to Ruby inheritance?)
     - First-class functions - Functions are treatd as variables
@@ -17,3 +17,52 @@ A high-level overview of JS
     - Non-blocking event loop - Takes long running tasks, executes them in the background 
     and puts them back in the main thread once they are finished
     - Concurrency model - Handles multiple tasks happening at the same time
+
+The JS engine & Runtime
+
+    The JS engine is (at it's most basic) a program that executes JavaScript code
+    Every browser has its own JS engine
+        - Made up of a call stack and a heap
+
+    Call Stack
+        - Where code is executed
+        - Executed using execution contexts
+
+    Heap
+        - Un-structured memory pool
+        - Stores all objects an application needs
+
+    Compilation vs interpretation
+        Compilation
+            - Entire source code is converted in to machine code at once
+            - Then written in to a portable file that can be executed on any computed
+            - Execution can happen long after compilation
+        Interpretation
+            - Interpreter runs through the source code and executes it line-by-line
+
+    Modern JavaScript engines use a mix of compilation and interpretation
+        - Called Just In Time Compilation (JIT)
+        - No portable file, so execution happens immediately
+
+    How is it compiled?
+        - Parsed in to the Abstract Syntax Tree (AST)
+            - Splits in to meaningful syntax/keywords and stored in a structured way
+        - Compilation
+            - Takes generated AST and compiles in to machine code
+        - Execution
+            - Happens in Call Stack
+
+        - Optimisation
+            - JS starts by making a poorly optimised version, to make run-time quicker
+            - Optimisation then improves and recompiles the code during execution
+            - Happens potentially multiple times between execution and compilation
+
+    Run-time in the browser
+
+    A container including all the things that we need to use JS
+        - JS engine
+        - Web APIs (DOM, timers, fetch API etc.)
+        - Callback queue (click, timer, data etc.)
+    
+    Event loop
+        - Essential for non-blocking concurrency model
