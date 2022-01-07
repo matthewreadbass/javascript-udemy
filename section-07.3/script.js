@@ -12,15 +12,25 @@ const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 
-// starting conditions
-score0Elem.textContent = '0';
-score1Elem.textContent = '0';
-diceElem.classList.add('hidden');
+let scores, activePlayer, playing, currentScore;
 
-const scores = [0, 0];
-let currentScore = 0;
-let activePlayer = 0;
-let playing = true;
+// (re)set game function
+const init = function () {
+  scores = [0, 0];
+  activePlayer = 0;
+  playing = true;
+  currentScore = 0;
+  score0Elem.textContent = '0';
+  score1Elem.textContent = '0';
+  diceElem.classList.add('hidden');
+  current0Elem.textContent = '0';
+  current1Elem.textContent = '0';
+  player0Elem.classList.remove('player--winner');
+  player1Elem.classList.remove('player--winner');
+  player0Elem.classList.add('player--active');
+  player1Elem.classList.remove('player--active');
+};
+init();
 
 // switch player function
 const switchPlayer = function () {
@@ -75,4 +85,8 @@ btnHold.addEventListener('click', function () {
       switchPlayer();
     }
   }
+});
+
+btnNew.addEventListener('click', function () {
+  init();
 });
