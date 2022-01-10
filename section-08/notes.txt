@@ -93,3 +93,47 @@ Execution Contexts and the Call Stack
     The Call Stack
         - A place where execution contexts get stacked on top of each other in order to keep track of where we are in the programme's execution
         - Ensures that the order of execution never gets lost
+
+Scope and the Scope Chain
+
+    Scoping
+        - How our program's variables are organised and accessed.
+        - "Where do variables live?"
+        - "Where can we access a certain value/where not?"
+    
+    Lexical Scoping
+        - Scoping is controlled by placement of functions and blocks in the code
+    
+    Scope
+        - The space/environment in which a certain variable is declared (variable environment in the case of functions)
+        - There is global scope, function scope and block scope
+
+    Scope of a variable
+        - The region of our code where a certain value can be accessed
+
+    Global Scope
+        - Outide of any function or block
+        - Variables declared in global scope are accessible everywhere
+
+    Function Scope
+        - Variables are accessible only inside the function they were created in, not outside
+        - Also called Local Scope
+
+    Block Scope (ES6)
+        -  Variables are accessible only inside the block they were created in (Block Scoped)
+            - Eg. if blocks/for loops
+            - HOWEVER, this only applies to let and const variables
+        - Functions are also Block Scoped (only in strict mode)
+    
+    The Scope Chain
+        - Scopes have access to variables from all outer Scopes (variable lookup)
+            - Eg. a nested function will be able to access the variables of the function it is nested inside/the global scope
+                - the outer function will not be able to access variables from the inner function
+                - Variables in the global scope will not be able to access variable from either of the nested Functions
+                - Only parent scopes can be used - not child/sibling scopes
+    
+    Scope Chain vs Call Stack
+        - The Call Stack runs in the order that the programme/each function is called
+        - The Scope Chain is all about the order in which functions are written in the code
+            - However it has nothing to do with the order in which functions were called
+
