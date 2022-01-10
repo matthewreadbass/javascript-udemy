@@ -62,7 +62,7 @@ function deleteShoppingCart() {
 
 var x = 1; // will create a property on the window object
 let y = 2; // will not create a property on the window object
-const z = 3; // will not create a property on the window object  */
+const z = 3; // will not create a property on the window object
 
 // The this Keywords
 
@@ -96,4 +96,100 @@ const matilda = {
 
 matilda.calcAge = matthew.calcAge; // matilda object borrows the method from the matthew object
 matilda.calcAge(); // this now points to matilda
-// the this in the matthew object will still point to the matilda object if called by matilda
+// the this in the matthew object will still point to the matilda object if called by matilda */
+
+// Regular Functions vs Arrow Functions
+
+const matthew = {
+  firstName = 'Matthew',
+  year: 1994,
+  calcAge: function () {
+    console.log(2021 - this.year);
+  },
+
+  greet: () => console.log(`Hey ${this.firstName}`),
+};
+matthew.greet(); // will returned "Hey undefined" - arrow functions don't get their own this keyword
+// instead will use the scope of its parent object (in this case the global object)
+// if there was a firstName variable defined on the global object using var, the this keyword would refer to it
+
+const matthew = {
+  firstName = 'Matthew',
+  year: 1994,
+  calcAge: function () {
+    console.log(2021 - this.year);
+  },
+  greet: function () {
+    console.log(`Hey ${this.firstName}`);
+  },
+};
+matthew.greet(); // will log 'Hey Matthew'
+
+const matthew = {
+  firstName = 'Matthew',
+  year: 1994,
+  calcAge: function () {
+    console.log(2021 - this.year);
+    const isMillenial = function () {
+      console.log(this.year >= 1981 && this.year <= 1996);
+    };
+    isMillenial();
+  },
+  greet: function () {
+    console.log(`Hey ${this.firstName}`);
+  },
+};
+// the this keyword inside the isMillenial function is undefined
+// the this keyword must be undefined in a regular function call (whether or not it is inside a method)
+// remedy using the self keyword as below, preserving the this call from earlier
+
+const matthew = {
+  firstName = 'Matthew',
+  year: 1994,
+  calcAge: function () {
+    console.log(2021 - this.year);
+    const self = this;
+    const isMillenial = function () {
+      console.log(self.year >= 1981 && self.year <= 1996);
+    };
+    isMillenial();
+  },
+  greet: function () {
+    console.log(`Hey ${this.firstName}`);
+  },
+};
+
+// with an arrow function - an arrow function doesn't get its own this keyword
+// instead it will use the scope of its parent object (in this case the calcAge method/the matthew object)
+
+const matthew = {
+  firstName = 'Matthew',
+  year: 1994,
+  calcAge: function () {
+    console.log(2021 - this.year);
+    const isMillenial = () => {
+      console.log(this.year >= 1981 && this.year <= 1996);
+    };
+    isMillenial();
+  },
+  greet: function () {
+    console.log(`Hey ${this.firstName}`);
+  },
+};
+
+// The arguments keyword (only available in regular functions, like the this keyword)
+
+const constArguments = function (a, b) {
+  console.log(arguments); // will log "0: <value-a> 1: <value-b>" (amongst other things)
+};
+constArguments(2, 5); // Arguments => [0: 2, 1: 5]
+// it is possible to provide more arguments than necesarry
+constArguments(2, 5, 8, 12); // Arguments => [0: 2, 1: 5, 2: 8, 3: 12]
+// and can be accessed using index position
+
+var arrowArguments = (a, b) => {
+  console.log(arguments);
+}
+arrowArguments(1, 2, 3, 4); // "Uncaught ReferenceError:arguments is not defined"
+// arrow functions don't get the arguments keyword
+// the arguments keyword only exists in regular functions (function expressions/declarations, but not arrow functions)
