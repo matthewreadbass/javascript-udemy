@@ -181,3 +181,11 @@ Variable Environment: Hoisting and The TDZ
         - Using functions before actual declaration
         - Makes code more readable
         - var hoisting is just a byproduct
+
+The this Keyword
+
+    - A special variable that is created for each individual execution context (every function)
+    - Takes the value of/points to the "owner" of the function in which the this keyword is used
+    - is not a static value
+        - depends on how the function is called, and its value is only assigned when the function is actually called
+    - arrow functions do not get their own this keyword
