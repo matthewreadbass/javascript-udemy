@@ -66,3 +66,30 @@ The JS engine & Runtime
     
     Event loop
         - Essential for non-blocking concurrency model
+
+Execution Contexts and the Call Stack
+
+    Execution (continued)
+        - Global Execution Context created for top-level code (code outside of functions)
+            - Execution Context
+                - An environment in which a piece of JS is executed
+                - Stores all the necessary information for code to be evaluated
+            - One Global Execution context: Default context, created for code that is not inside a function (top-level)
+        - Execution of top-level code
+        - A new execution context is created for each function call/callback (eg. page click)
+
+    What's inside an execution context?
+    - All generated during "creation phase" right before execution
+        - Variable environment
+            - let, const, var etc
+            - functions
+            - arguments object
+        - Scope Chain
+            - References to variables located outside of the current function
+        - this keyword
+    - arrow function execution contexts don't get their own arguments object OR this keyword
+        - instead use the arguments object/this keyword from their closest regular function parent
+
+    The Call Stack
+        - A place where execution contexts get stacked on top of each other in order to keep track of where we are in the programme's execution
+        - Ensures that the order of execution never gets lost
