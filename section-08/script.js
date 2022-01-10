@@ -192,9 +192,9 @@ var arrowArguments = (a, b) => {
 }
 arrowArguments(1, 2, 3, 4); // "Uncaught ReferenceError:arguments is not defined"
 // arrow functions don't get the arguments keyword
-// the arguments keyword only exists in regular functions (function expressions/declarations, but not arrow functions) */
+// the arguments keyword only exists in regular functions (function expressions/declarations, but not arrow functions)
 
-// Primitives vs Objects (Primitive vs Reference Types)
+        // Primitives vs Objects (Primitive vs Reference Types)
 
 let age = 27;
 let oldAge = age;
@@ -211,4 +211,62 @@ const friend = me;
 friend.age = 27;
 
 console.log('Friend:', friend); // 27
-console.log('Me:', me); // 27 ?? - Why?
+console.log('Me:', me); // 27 ?? - Why? */
+
+let lastName = 'Read';
+let oldLastName = lastName;
+lastName = 'Syvread';
+console.log(lastName, oldLastName); // logs Syvread Read
+// each primitive value is saved in to its own piece of memory in the stack
+
+const matthew = {
+  firstName: 'Matthew',
+  lastName: 'Read',
+  age: 27,
+};
+
+const dadBod = matthew;
+dadBod.lastName = 'Syvread';
+dadBod.age = 28;
+
+console.log(matthew); // {firstName: 'Matthew', lastName: 'Syvread', age: 28} - Whaaaat????
+console.log(dadBod); // {firstName: 'Matthew', lastName: 'Syvread', age: 28} - Correct
+// when creating the new dadBod object, it didn't create a newboth object in the heap
+// dadBod is simply another variable in the stack which holds a reference to the original object
+// matthew and dadBod bod point to the same memory address in the heap as they both hold the same memory address reference in the stack
+// this is why it is possible to change values on an object declared using const
+//      - the thing that remains constant is the memory address reference in the stack, not the contents of the object
+
+// do the above successfully with...
+
+const matthew2 = {
+  firstName: 'Matthew',
+  lastName: 'Read',
+  age: 27,
+};
+
+const dadBod2 = Object.assign({}, matthew2); // essentially merges two objects and then assigns a new one
+dadBod2.lastName = 'Syvread';
+dadBod2.age = 28;
+
+console.log(matthew2); // {firstName: 'Matthew', lastName: 'Read', age: 27} - Correct
+console.log(dadBod2); // {firstName: 'Matthew', lastName: 'Syvread', age: 28} - Correct
+// if there is an object inside an object that is copied using Object.assign, the original issue will persist
+//      - only creates a "shallow copy", not a "deep clone"
+
+const matthew3 = {
+  firstName: 'Matthew',
+  lastName: 'Read',
+  age: 27,
+  family: ['Beccy', 'Simon'],
+};
+
+const dadBod3 = Object.assign({}, matthew3);
+dadBod3.lastName = 'Syvread';
+dadBod3.age = 28;
+dadBod3.family.push('Kim');
+
+console.log(matthew3); // {firstName: 'Matthew', lastName: 'Read', age: 27, family: ['Beccy', 'Simon', 'Kim'} - Family array is incorrect
+// the array inside matthew3 has the same memory address reference in the stack as for dadBod3 and the original problem persists
+//      - A shallow copy has been created, not a deep clone
+console.log(dadBod3); // {firstName: 'Matthew', lastName: 'Syvread', age: 28, family: ['Beccy', 'Simon', 'Kim'} - Correct
