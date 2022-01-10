@@ -21,7 +21,7 @@
   return age;
 }
 
-    // Hoisting and TDZ in practice
+        // Hoisting and TDZ in practice
 
 const firstName = 'Matthew';
 calcAge(1994);
@@ -64,7 +64,7 @@ var x = 1; // will create a property on the window object
 let y = 2; // will not create a property on the window object
 const z = 3; // will not create a property on the window object
 
-// The this Keywords
+        // The this Keywords
 
 console.log(this); // points to the window object
 
@@ -96,9 +96,9 @@ const matilda = {
 
 matilda.calcAge = matthew.calcAge; // matilda object borrows the method from the matthew object
 matilda.calcAge(); // this now points to matilda
-// the this in the matthew object will still point to the matilda object if called by matilda */
+// the this in the matthew object will still point to the matilda object if called by matilda
 
-// Regular Functions vs Arrow Functions
+        // Regular Functions vs Arrow Functions
 
 const matthew = {
   firstName = 'Matthew',
@@ -192,4 +192,23 @@ var arrowArguments = (a, b) => {
 }
 arrowArguments(1, 2, 3, 4); // "Uncaught ReferenceError:arguments is not defined"
 // arrow functions don't get the arguments keyword
-// the arguments keyword only exists in regular functions (function expressions/declarations, but not arrow functions)
+// the arguments keyword only exists in regular functions (function expressions/declarations, but not arrow functions) */
+
+// Primitives vs Objects (Primitive vs Reference Types)
+
+let age = 27;
+let oldAge = age;
+age = 28;
+console.log(age); // 28
+console.log(oldAge); // 27
+
+const me = {
+  name: 'matthew',
+  age: 28,
+};
+
+const friend = me;
+friend.age = 27;
+
+console.log('Friend:', friend); // 27
+console.log('Me:', me); // 27 ?? - Why?

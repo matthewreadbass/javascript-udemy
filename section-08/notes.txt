@@ -189,3 +189,24 @@ The this Keyword
     - is not a static value
         - depends on how the function is called, and its value is only assigned when the function is actually called
     - arrow functions do not get their own this keyword
+
+Primitives vs Objects (Primitive vs Reference Types)
+
+    Primitives (primitive types):
+        - Number
+        - String
+        - Boolean
+        - Undefined
+        - Null
+        - Symbol
+        - BigInt
+
+    Objects (reference types):
+        - Object Literal
+        - Arrays
+        - Functions
+        - many more...
+
+    All reference types (objects) are stored in the heap
+    All primitives are stored in the call stack (the execution contexts in which they are declared)
+
