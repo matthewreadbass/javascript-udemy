@@ -131,6 +131,7 @@ Scope and the Scope Chain
                 - the outer function will not be able to access variables from the inner function
                 - Variables in the global scope will not be able to access variable from either of the nested Functions
                 - Only parent scopes can be used - not child/sibling scopes
+            - The Scope Chain is a one-way street
     
     Scope Chain vs Call Stack
         - The Call Stack runs in the order that the programme/each function is called
