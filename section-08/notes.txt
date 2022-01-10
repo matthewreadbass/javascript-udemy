@@ -138,3 +138,46 @@ Scope and the Scope Chain
         - The Scope Chain is all about the order in which functions are written in the code
             - However it has nothing to do with the order in which functions were called
 
+Variable Environment: Hoisting and The TDZ
+
+    Execution Context includes:
+        - Variable Environment
+        - Scope Chain
+        - this Keyword
+
+    Hoisting
+        - Makes some types of variables accessible/usable in the code before they are actually declared
+        - Before execution, code is scanned for variable declarations
+        - For each variable a new property is created in the variable environment object
+        - Hoisting is not the same for all variable types
+
+        Function declarations
+            - Are hoisted
+            - Initial value in Environment Object set to the actual function
+            - Block scoped (only true in strict mode - otherwise they are function scoped)
+
+        var variables
+            - Are hoisted - Undefined if accessed before declared in code (not error)
+            - Initial value in Environment Object is undefined ^^^^
+            - Function scoped
+
+        let and const variables
+            - Not hoisted
+            - Initial value in Environment Object is uninitialised
+                - Placed in TDZ (Temporal Dead Zone)
+                    - Can't access variables between beginning of the code and the place where the variables are defined
+            - Block scoped
+
+        function expressions and arrows
+            - Depends if created using var, let or const
+            - Behave the same as above as they are simply variables
+
+    Why TDZ?
+        - Makes it easer to avoid and catch errors
+            - Accessing variables before declaration is bad practice and should be avoided
+        - Makes const variables actually work
+
+    Why hoisting?
+        - Using functions before actual declaration
+        - Makes code more readable
+        - var hoisting is just a byproduct
