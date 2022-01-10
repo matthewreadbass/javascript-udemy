@@ -177,7 +177,7 @@ Variable Environment: Hoisting and The TDZ
             - Accessing variables before declaration is bad practice and should be avoided
         - Makes const variables actually work
 
-    Why hoisting?
+    Why Hoisting?
         - Using functions before actual declaration
         - Makes code more readable
         - var hoisting is just a byproduct
