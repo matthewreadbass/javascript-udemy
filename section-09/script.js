@@ -16,9 +16,20 @@ const restaurant = {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
-  orderDelivery: function({starterIndex = 1, mainIndex = 0, time = '22:00', address}) {
+  orderDelivery: function ({
+    starterIndex = 1,
+    mainIndex = 0,
+    time = '22:00',
+    address,
+  }) {
     console.log(`Order received! ${this.starterMenu[starterIndex]} and 
     ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}!`);
+  },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`
+    );
   },
 
   openingHours: {
@@ -36,7 +47,8 @@ const restaurant = {
     },
   },
 };
-// Destructuring Objects
+/*
+        // Destructuring Objects
 
 const {
   name: restaurantName,
@@ -125,3 +137,49 @@ console.log(p, q, r); // will log 8, 9, undefined
 // instead set default value
 const [d = 1, e = 1, f = 1] = [8, 9];
 console.log(d, e, f); // will log 8, 9, 1 */
+
+// The Spread Operator (...)
+
+// without the spread operator
+const arr = [7, 8, 9];
+const badArr = [1, 2, 3, arr[0], arr[1], arr[2]];
+// [1, 2, 3, 7, 8, 9]
+
+// with the spread operator
+const goodArr = [4, 5, 6, ...arr];
+// [4, 5, 6, 7, 8, 9]
+
+// use ... to log all individual elements of the array
+console.log(...goodArr); // will log 4, 5, 6, 7, 8, 9
+
+const newMenu = [...restaurant.mainMenu, 'Gnocchi'];
+// ['Pizza', 'Pasta', 'Risotto', 'Gnocchi']
+
+// create a shallow copy of an array
+const newMenuCopy = [...newMenu];
+// ['Pizza', 'Pasta', 'Risotto', 'Gnocchi']
+
+// join 2 (or more) arrays together
+const joinedArr = [...arr, ...badArr, ...goodArr];
+// [7, 8, 9, 1, 2, 3, 7, 8, 9, 4, 5, 6, 7, 8, 9]
+
+const ingredients = [
+  prompt("Let's make pasta! Ingredient 1?"),
+  prompt('Ingredient 2?'),
+  prompt('Ingredient 2?'),
+];
+console.log(ingredients);
+
+// instead of...
+restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+
+// get the same result with
+restaurant.orderPasta(...ingredients);
+
+// create a new object
+const newRestaurant = { owner: 'Matthew', foundedIn: 2022, ...restaurant };
+
+// use to create shallow copy of an object
+const restaurantCopy = { ...restaurant };
+// you can now change the same values in seperate objects without changing the
+// corresponding value in the copied object

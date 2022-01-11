@@ -40,3 +40,23 @@ Destructuring Objects
         console.log(whatTheyIsCalled); => will log "Matthew"
         console.log(howOldTheyIs); => will log 27
         console.log(whatTheyDoesForALiving); => will log "Software Engineer"
+
+The Spread Operator (...)
+
+    Expand an array in to all of it's elements
+    Unpack all array elements at once
+    Only able to use it in places where you would write values seperated by commas (not objects)
+        - Doesn't create new variables
+    Use to create shallow copies of arrays and merge two arrays together
+        const arrCopy = [...arr];
+        const combinedArr = [...arr1, ...arr2];
+    Spread Operator works on all iterables
+        Iterable: arrays, strings, maps, sets
+            Not objects (not strictly true)
+        You can use iterables on all of above
+            const string = 'string';
+            const letters = [...string];
+            console.log(letters); => ['s', 't', 'r', 'i', 'n', 'g']
+        
+        Since ES2018, the Spread operator now works on objects too!
+            const newObject = {...object, newInformation, coolStuff};
