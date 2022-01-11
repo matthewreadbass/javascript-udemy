@@ -16,6 +16,11 @@ const restaurant = {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
+  orderDelivery: function({starterIndex = 1, mainIndex = 0, time = '22:00', address}) {
+    console.log(`Order received! ${this.starterMenu[starterIndex]} and 
+    ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}!`);
+  },
+
   openingHours: {
     thu: {
       open: 12,
@@ -31,7 +36,55 @@ const restaurant = {
     },
   },
 };
+// Destructuring Objects
 
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(restaurantName); // logs 'Classico Italiano'
+console.log(hours); // logs thu: {...}, fri: {...}, sat: {...}}
+console.log(tags); // logs ['Italian', 'Pizzeria', 'Vegetarian', 'Organic']
+
+// set default values
+console.log(restaurant.menu); // undefined
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console.log(menu); // [] - default value used as no restaurant property called 'menu'
+console.log(starters); // ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad']
+//      - default value ignored, but name still changed
+
+// mutating variables while destructuring objects
+let a = 111;
+let b = 999;
+const obj = { a: 23, b: 7, c: 14 };
+{a, b} = obj; // syntax error - a & b are already defined
+({a,b} = obj); // JS expects lines that start with { to be a code block - wrap in parentheses to solve
+console.log(a); // will log 23
+console.log(b); // will log 7
+
+// nested objects (hours = openingHours)
+const { fri } = hours;
+console.log(fri); // will log {open: 11, close: 23}
+const { fri: {open, close} } = hours; // access indivdual nested values
+console.log(open); // will log 11
+console.log(close); // will log 23
+const { fri: {open: friOpen, close: friClose} } = hours; // or set new names
+console.log(friOpen); // will log 11
+console.log(friClose); // will log 23
+
+restaurant.orderDelivery({
+  time: '22:30',
+  address: 'Via del Sole, 21',
+  mainIndex: 2,
+  starterIndex: 2,
+}); // orderDelivery function arguments does the destructuring
+// will log "Order received! Garlic Bread and Risotto will be delivered to
+// Via del Sole, 21 at 22:30!"
+
+/* 
+        // Destructuring Arrays
+        
 const [first, second] = restaurant.categories;
 console.log(first); // will log "Italian"
 console.log(second); // will log "Pizzeria"
@@ -71,4 +124,4 @@ const [p, q, r] = [8, 9];
 console.log(p, q, r); // will log 8, 9, undefined
 // instead set default value
 const [d = 1, e = 1, f = 1] = [8, 9];
-console.log(d, e, f); // will log 8, 9, 1
+console.log(d, e, f); // will log 8, 9, 1 */
