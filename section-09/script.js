@@ -32,6 +32,11 @@ const restaurant = {
     );
   },
 
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
+
   openingHours: {
     thu: {
       open: 12,
@@ -136,9 +141,9 @@ const [p, q, r] = [8, 9];
 console.log(p, q, r); // will log 8, 9, undefined
 // instead set default value
 const [d = 1, e = 1, f = 1] = [8, 9];
-console.log(d, e, f); // will log 8, 9, 1 */
+console.log(d, e, f); // will log 8, 9, 1
 
-// The Spread Operator (...)
+        // The Spread Operator (...)
 
 // without the spread operator
 const arr = [7, 8, 9];
@@ -182,4 +187,42 @@ const newRestaurant = { owner: 'Matthew', foundedIn: 2022, ...restaurant };
 // use to create shallow copy of an object
 const restaurantCopy = { ...restaurant };
 // you can now change the same values in seperate objects without changing the
-// corresponding value in the copied object
+// corresponding value in the copied object */
+
+// Rest pattern and parameters
+
+// 1 - destructuring
+
+// rest with arrays
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza); // "Pizza"
+console.log(risotto); // "Risotto"
+console.log(otherFood); // ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad']
+
+// rest with objects
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays); // {thu: {...}, fri: {...}}
+
+// 2 - functions
+const add = function (...numbers) {
+  console.log(numbers); // logs input parameters in an array of indefinite length
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+  console.log(sum);
+};
+
+add(2, 3); // 5
+add(5, 2, 7, 1); // 15
+add(8, 2, 5, 3, 2, 1, 4); // 25
+
+// using spread (in function args) & rest (add(...x)) one after another
+const x = [23, 5, 7];
+add(...x); // 35
+
+restaurant.orderPizza('Mozzarella', "N'duja", 'Salame Picante');
+// will output "Mozarella" ["N'duja", 'Salame Picante']
+restaurant.orderPizza('Mushrooms');
+// will output "Mushrooms" without an array

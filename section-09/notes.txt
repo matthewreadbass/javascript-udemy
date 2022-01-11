@@ -45,6 +45,7 @@ The Spread Operator (...)
 
     Expand an array in to all of it's elements
     Unpack all array elements at once
+    Written on the RH side of the assignment operator (=)
     Only able to use it in places where you would write values seperated by commas (not objects)
         - Doesn't create new variables
     Use to create shallow copies of arrays and merge two arrays together
@@ -60,3 +61,22 @@ The Spread Operator (...)
         
         Since ES2018, the Spread operator now works on objects too!
             const newObject = {...object, newInformation, coolStuff};
+
+Rest pattern and parameters
+
+    Exact same syntax as spread operator
+    Used to collect individual elements and condense them in to an array
+    Takes the REST of the elements and makes a new array out of them
+    Must be the last element in a destructuring assignment
+        Can only ever be one rest in a destructuring assignment
+    Written on the LH side of the assignment operator (=)
+        const [ a, b, ...others ] = [1, 2, 3, 4, 5];
+            |=> a = 1, b = 2, others = [3, 4, 5]
+    Also works with objects
+        Elements can't be skipped as objects aren't indexed
+            const { 3, 4, ...others } = numbers;
+            console.log(3); => { 3: 'three' }
+            console.log(4); => { 4: 'four' }
+            console.log(others); => { 1: 'one', 2: 'two', 5: 'five' }
+    Can be used in function arguments
+    
