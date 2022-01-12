@@ -187,9 +187,9 @@ const newRestaurant = { owner: 'Matthew', foundedIn: 2022, ...restaurant };
 // use to create shallow copy of an object
 const restaurantCopy = { ...restaurant };
 // you can now change the same values in seperate objects without changing the
-// corresponding value in the copied object */
+// corresponding value in the copied object
 
-// Rest pattern and parameters
+        // Rest pattern and parameters
 
 // 1 - destructuring
 
@@ -225,4 +225,45 @@ add(...x); // 35
 restaurant.orderPizza('Mozzarella', "N'duja", 'Salame Picante');
 // will output "Mozarella" ["N'duja", 'Salame Picante']
 restaurant.orderPizza('Mushrooms');
-// will output "Mushrooms" without an array
+// will output "Mushrooms" without an array  */
+
+// Short Circuiting (&& and ||)
+
+// short circuiting with the || operator
+// If the first value is a truthy value, it will return that value
+console.log('hello' || 'cheese'); // => 'hello'
+console.log('cheese' || 'hello'); // => 'cheese'
+console.log(null || 72); // => 72
+console.log('false' || true); // => 'false'
+console.log(false || null); // => null
+console.log(undefined || 0 || '' || 'Hello' || 'world'); // => "Hello"
+
+// practical use
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1); // => 10
+restaurant.numGuests = 23;
+console.log(guests1); // => 23
+
+// do the same using short circuiting
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2); // => 23
+// above will not work if the number of guests is set to 0, as 0 is a falsey value
+
+// short circuiting with the || operator
+// will return the first falsey value
+// if no falsey values, will return the last value
+console.log(0 && 'Matthew'); // => 0
+console.log(7 && 'Matthew'); // => "Matthew"
+console.log('hello' && 23 && null && 'Matthew'); // => null
+
+// practical use
+// if .orderPizza exists, order a pizza with mushrooms and salami
+// otherwise do nothing
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'salami');
+}
+
+// with short circuiting
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'salami');
+// if .orderPizza exists, the last value (ordering a pizza) will evaluate
+// if not, nothing will happen

@@ -79,4 +79,25 @@ Rest pattern and parameters
             console.log(4); => { 4: 'four' }
             console.log(others); => { 1: 'one', 2: 'two', 5: 'five' }
     Can be used in function arguments
+
+Short Circuiting (&& and ||)
+
+    AND (&&) and OR (||) operators can be used for more than just with boolean values
+        3 || 'Matthew' => 3
+        0 && 'Matthew' => 0
+    Logical Operators can:
+        - use any data type
+        - return any data type
+        - perform short-circuit evaluation
     
+    Short Circuiting with the || operator
+        If the first value is a truthy value, it will return that value
+            'hello' || 'cheese' => 'hello'
+            false || 'cheese' => 'cheese'
+        If more than two values present, the first truthy value will be returned
+
+    Short Circuiting with the && operator
+        If the first value is falsey, it will return that value
+            false && true => false
+        Will return the last value if all values are true
+            12 && 'hello' => 'hello'
