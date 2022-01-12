@@ -311,9 +311,9 @@ rest2.numGuests ??= 10; // => rest2.numGuests = 10
 rest1.owner &&= '<Anonymous>'; // undefined
 // rest1.owner does not exist, so nothing happens
 rest2.owner &&= '<Anonymous>'; // '<Anonymous>'
-// rest2.owner does exist, so it is replaced  */
+// rest2.owner does exist, so it is replaced
 
-// Coding Challenge #1
+        // Coding Challenge #1
 
 const game = {
   team1: 'Bayern Munich',
@@ -380,4 +380,27 @@ printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
 printGoals(...game.scored);
 
 team1 < team2 && console.log('Team 1 is more likely to win');
-team1 > team2 && console.log('Team 2 is more likely to win');
+team1 > team2 && console.log('Team 2 is more likely to win'); */
+
+// Looping Arrays - The for-of Loop
+
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of menu) console.log(item);
+// will individually log each element from the menu
+
+for (const item of menu.entries()) {
+  console.log(item);
+} // will log each element in an individual array with it's index number
+
+// possible to use destructuring in for-of loop call
+for (const [index, elem] of menu.entries()) {
+  console.log(`${item[index + 1]}: ${elem}`);
+} // will log:
+//      1: Focaccia
+//      2: Bruschetta
+//      3: Garlic Bread
+//      4: Caprese Salad
+//      5: Pizza
+//      6: Pasta
+//      7: Risotto

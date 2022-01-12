@@ -138,3 +138,25 @@ Logical Assignment Operators
             this.number &&= 15; => changes the value from 10 to 15
             this.word &&= 'hello'; => this.word does not exist and so nothing is evaluated
             console.log(this.word); => undefined
+
+Looping Arrays - The for-of Loop
+
+    Instead of setting up a for loop with a counter/condition 
+    and updating the counter, use a for-of loop
+        const nums = ['zero', 'one', 'two', 'three', 'four'];
+        for (const num of nums) console.log(num);
+            |=> 'zero'
+            |=> 'one'
+            |=> 'two'
+            |=> 'three'
+            |=> 'four'
+    Can still use the continue & break keywords
+    To access the index of each item
+        for (const num of nums.entries()) {
+            console.log(item);
+        };
+            |=> [0, 'zero'] // [indexPoistion, value]
+            |=> [1, 'one']
+            |=> [2, 'two']
+            |=> [3, 'three']
+            |=> [4, 'four']
