@@ -225,9 +225,9 @@ add(...x); // 35
 restaurant.orderPizza('Mozzarella', "N'duja", 'Salame Picante');
 // will output "Mozarella" ["N'duja", 'Salame Picante']
 restaurant.orderPizza('Mushrooms');
-// will output "Mushrooms" without an array  */
+// will output "Mushrooms" without an array
 
-// Short Circuiting (&& and ||)
+        // Short Circuiting (&& and ||)
 
 // short circuiting with the || operator
 // If the first value is a truthy value, it will return that value
@@ -266,4 +266,15 @@ if (restaurant.orderPizza) {
 // with short circuiting
 restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'salami');
 // if .orderPizza exists, the last value (ordering a pizza) will evaluate
-// if not, nothing will happen
+// if not, nothing will happen */
+
+// The Nullish Coalescing Operator (??)
+
+restaurant.numGuests = 0;
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2); // => 10
+// the above should be 0 however, as .numGuests does exist and that is
+// what this function is checking for. 0 is considered falsey
+
+const guests3 = restaurant.numGuests ?? 10;
+console.log(guests3); // => 0

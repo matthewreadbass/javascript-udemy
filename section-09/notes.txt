@@ -97,7 +97,20 @@ Short Circuiting (&& and ||)
         If more than two values present, the first truthy value will be returned
 
     Short Circuiting with the && operator
-        If the first value is falsey, it will return that value
+        Will return the first falsey value
             false && true => false
+            'hello' && 'world' && 54 & undefined => undefined
         Will return the last value if all values are true
             12 && 'hello' => 'hello'
+
+The Nullish Coalescing Operator (??)
+
+    Introduced in ES2020
+    Solves the issue of 0 being considered falsey when short circuiting with || and &&
+        const zero = 0
+        const zeroOrTen = zero || 10; => 10
+            Fix using...
+        const zeroOrTenNCO = zero ?? 10; => 0
+    The Nullish Coalescing Operator works with the concept of nullish values, rather than falsey values
+    Nullish values === null or undefined
+        |=> DOES NOT include 0 or ''
