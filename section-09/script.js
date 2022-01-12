@@ -266,9 +266,9 @@ if (restaurant.orderPizza) {
 // with short circuiting
 restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'salami');
 // if .orderPizza exists, the last value (ordering a pizza) will evaluate
-// if not, nothing will happen */
+// if not, nothing will happen
 
-// The Nullish Coalescing Operator (??)
+        // The Nullish Coalescing Operator (??)
 
 restaurant.numGuests = 0;
 const guests2 = restaurant.numGuests || 10;
@@ -277,4 +277,38 @@ console.log(guests2); // => 10
 // what this function is checking for. 0 is considered falsey
 
 const guests3 = restaurant.numGuests ?? 10;
-console.log(guests3); // => 0
+console.log(guests3); // => 0 */
+
+// Logical Assignment Operators
+
+const rest1 = {
+  name: 'Cheesey Explosion',
+  numGuests: 20,
+};
+
+const rest2 = {
+  name: "Food 'n' Stuff",
+  owner: 'Ron Swanson',
+};
+
+// adding a default numGuests property to all restaurant objects
+// that don't have one
+rest1.numGuests = rest1.numGuests || 10;
+rest2.numGuests = rest2.numGuests || 10;
+// added a numGuests property to rest2, but not rest1
+
+// doing the above with the OR Assignment Operator
+rest1.numGuests ||= 10; // => rest1.numGuests = 20
+rest2.numGuests ||= 10; // => rest2.numGuests = 10
+
+// Logical OR Assignment Operator Doesn't work if a value is 0 (as with short circuiting)
+// Use the Logical Nullish Assignment Operator to solve this
+rest1.numGuests = 0;
+rest1.numGuests ??= 10; // => rest1.numGuests = 0
+rest2.numGuests ??= 10; // => rest2.numGuests = 10
+
+// Logical AND Assignment Opertor can replace values if they exist
+rest1.owner &&= '<Anonymous>'; // undefined
+// rest1.owner does not exist, so nothing happens
+rest2.owner &&= '<Anonymous>'; // '<Anonymous>'
+// rest2.owner does exist, so it is replaced

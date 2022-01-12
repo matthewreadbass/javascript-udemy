@@ -114,3 +114,27 @@ The Nullish Coalescing Operator (??)
     The Nullish Coalescing Operator works with the concept of nullish values, rather than falsey values
     Nullish values === null or undefined
         |=> DOES NOT include 0 or ''
+
+Logical Assignment Operators
+
+    Logical OR Assignment Operator
+        Works similarly to += / -= exact
+            reduce...
+                this = this || that;
+            to...
+                this ||= that;
+    As with short circuiting, doesn't work with 0 as it is considered falsey
+
+    Logical Nullish Assignment Operator
+        Same concept as the Nullish Coalescing Operator
+            const this = 0;
+            const that = 10;
+            this ||= that; => 10
+            this ??= that; => 0
+    
+    Logical AND Assignment Operator
+        Replaces values if they exist
+            this.number = 10;
+            this.number &&= 15; => changes the value from 10 to 15
+            this.word &&= 'hello'; => this.word does not exist and so nothing is evaluated
+            console.log(this.word); => undefined
