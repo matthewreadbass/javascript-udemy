@@ -76,7 +76,7 @@ let a = 111;
 let b = 999;
 const obj = { a: 23, b: 7, c: 14 };
 {a, b} = obj; // syntax error - a & b are already defined
-({a,b} = obj); // JS expects lines that start with { to be a code block - wrap in parentheses to solve
+({a, b} = obj); // JS expects lines that start with { to be a code block - wrap in parentheses to solve
 console.log(a); // will log 23
 console.log(b); // will log 7
 
@@ -277,9 +277,9 @@ console.log(guests2); // => 10
 // what this function is checking for. 0 is considered falsey
 
 const guests3 = restaurant.numGuests ?? 10;
-console.log(guests3); // => 0 */
+console.log(guests3); // => 0
 
-// Logical Assignment Operators
+        // Logical Assignment Operators
 
 const rest1 = {
   name: 'Cheesey Explosion',
@@ -311,4 +311,73 @@ rest2.numGuests ??= 10; // => rest2.numGuests = 10
 rest1.owner &&= '<Anonymous>'; // undefined
 // rest1.owner does not exist, so nothing happens
 rest2.owner &&= '<Anonymous>'; // '<Anonymous>'
-// rest2.owner does exist, so it is replaced
+// rest2.owner does exist, so it is replaced  */
+
+// Coding Challenge #1
+
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
+const players1 = [...game.players[0]];
+const players2 = [...game.players[1]];
+console.log(players1, players2);
+
+const [gk, ...fieldPlayers] = players1;
+console.log(gk, fieldPlayers);
+
+const allPlayers = [...players1, ...players2];
+console.log(allPlayers);
+
+const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
+console.log(players1Final);
+
+const { team1, x: draw, team2 } = game.odds;
+console.log(team1, draw, team2);
+
+const printGoals = function (...players) {
+  console.log(players);
+  console.log(players.length);
+};
+printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
+printGoals(...game.scored);
+
+team1 < team2 && console.log('Team 1 is more likely to win');
+team1 > team2 && console.log('Team 2 is more likely to win');
