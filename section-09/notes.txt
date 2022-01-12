@@ -160,3 +160,22 @@ Looping Arrays - The for-of Loop
             |=> [2, 'two']
             |=> [3, 'three']
             |=> [4, 'four']
+
+Enhanced Object Literals
+
+    Object Literal - An object written in using the {} syntax
+        const object = {<some-stuff>};
+        const otherObject = {<other-stuff>};
+
+        instead of writing...
+            otherObject: otherObject
+        ... in object, simply write
+            otherObject
+    Write functions inside objects without the function keyword
+        const object = {
+            add(num1, num2) {
+                return num1 + num2;
+            }
+        };
+    Compute property names instead of having to write them out manually/literally
+        ie. using array index positions/numeric calculations etc

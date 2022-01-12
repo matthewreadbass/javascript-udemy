@@ -380,9 +380,9 @@ printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
 printGoals(...game.scored);
 
 team1 < team2 && console.log('Team 1 is more likely to win');
-team1 > team2 && console.log('Team 2 is more likely to win'); */
+team1 > team2 && console.log('Team 2 is more likely to win');
 
-// Looping Arrays - The for-of Loop
+        // Looping Arrays - The for-of Loop
 
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
@@ -403,4 +403,65 @@ for (const [index, elem] of menu.entries()) {
 //      4: Caprese Salad
 //      5: Pizza
 //      6: Pasta
-//      7: Risotto
+//      7: Risotto */
+
+// Enhanced Object Literals
+
+const hobbies = {
+  music: 'yes please',
+  gym: "you're alright thanks mate",
+};
+
+const me = {
+  name: 'Matthew',
+  age: 27,
+  job: 'Software Engineer',
+  hobbies,
+};
+
+console.log(me);
+//    {name: 'Matthew'
+//      age: 27
+//      job: 'Software Engineer'
+//      hobbies: {
+//        music: 'yes please'
+//        gym: "you're alright thanks mate"
+//      }
+//    };
+
+// Can write functions inside Objects without the function keyword
+
+const calculator = {
+  add(num1, num2) {
+    return num1 + num2;
+  },
+
+  subtract(num1, num2) {
+    return num1 - num2;
+  },
+
+  multiply(num1, num2) {
+    return num1 * num2;
+  },
+
+  divide(num1, num2) {
+    return num1 / num2;
+  },
+};
+
+// compute property names instead of writing them out manually/literally
+const weekdays = ['mon', 'tues', 'wed', 'thu', 'fri', 'sat', 'sun'];
+const openingHours = {
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [weekdays[5]]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
