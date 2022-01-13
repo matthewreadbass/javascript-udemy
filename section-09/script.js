@@ -447,7 +447,7 @@ const calculator = {
   divide(num1, num2) {
     return num1 / num2;
   },
-}; */
+};
 
 // compute property names instead of writing them out manually/literally
 const weekdays = ['mon', 'tues', 'wed', 'thu', 'fri', 'sat', 'sun'];
@@ -466,7 +466,7 @@ const openingHours = {
   },
 };
 
-// Optional Chaining (?.)
+        // Optional Chaining (?.)
 
 // instead of
 if (restaurant.openingHours.mon) {
@@ -505,4 +505,39 @@ const users = [{ name: 'Matthew' }];
 console.log(usersEmpty[0]?.name ?? 'User array empty');
 //      |=> 'User array empty'
 console.log(users[0]?.name ?? 'User array empty');
-//      |=> 'Matthew'
+//      |=> 'Matthew' */
+
+// Looping Objects: Object Keys, Values and Entries
+
+//looping over property keys
+// use the for-of loop to loop over an array, not the objet itself
+const days = ['mon', 'tues', 'wed', 'thu', 'fri', 'sat', 'sun'];
+const openingHours = {
+  [days[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [days[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [days[5]]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+const properties = Object.keys(openingHours);
+console.log(properties); // ["thu", "fri", "sat"]
+
+console.log(`We are open on ${properties.length} days`); // (3 days)
+
+let openStr = `We are open on ${properties.length} days: `;
+//creating a string that you will concaternate below
+for (const day of properties) {
+  openStr += `${day}, `;
+}
+console.log(openStr); // 'We are open on 3 days: thu, fri, sat,'
+
+// looping over values
+
+// looping over keys and values together

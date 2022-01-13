@@ -200,3 +200,9 @@ Optional Chaining (?.)
         const arr = [{value: 1}];
         empty[0]?.value ?? 'Array empty'; => 'Array empty'
         arr[0]?.value ?? 'Array empty'; => 1
+
+Looping Objects: Object Keys, Values and Entries
+
+    Different options, depending on what you want to loop over
+    for Object.keys(<property-name>);
+        |=> creates an array of all the different values associated to the specified property name
