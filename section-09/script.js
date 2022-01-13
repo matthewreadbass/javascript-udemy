@@ -403,9 +403,9 @@ for (const [index, elem] of menu.entries()) {
 //      4: Caprese Salad
 //      5: Pizza
 //      6: Pasta
-//      7: Risotto */
+//      7: Risotto
 
-// Enhanced Object Literals
+        // Enhanced Object Literals
 
 const hobbies = {
   music: 'yes please',
@@ -447,7 +447,7 @@ const calculator = {
   divide(num1, num2) {
     return num1 / num2;
   },
-};
+}; */
 
 // compute property names instead of writing them out manually/literally
 const weekdays = ['mon', 'tues', 'wed', 'thu', 'fri', 'sat', 'sun'];
@@ -465,3 +465,44 @@ const openingHours = {
     close: 24,
   },
 };
+
+// Optional Chaining (?.)
+
+// instead of
+if (restaurant.openingHours.mon) {
+  console.log(restaurant.openingHours.mon.open);
+} // if restaurant opens on monday, log Monday opening hours
+//        |=> pretty long-winded
+//        |=> restaurant may not have a .openingHours function
+//        |=> will return an error if one of the methods doens't exist
+
+// use optional chaining...
+console.log(restaurant.openingHours.mon?.open);
+// .open will only be read if .mon exists (0 / '' DO exist)
+// otherwise will return undefined
+
+// can chain multiple Optional Chaining operators
+console.log(restaurant.openingHours?.mon?.open);
+
+const days = ['mon', 'tues', 'wed', 'thu', 'fri', 'sat', 'sun'];
+for (const day of days) {
+  console.log(day);
+  const open = restaurant.openingHours[day]?.open ?? 'closed';
+  console.log(`On ${day}, we open at ${open}`);
+}
+
+// use to check if a method exists
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+// returns ["Focaccia", "Pasta"];
+console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist');
+// returns 'Method does not exist'
+// restaurant.orderRisotto?.(0, 1) evaluates to undefined, so the nullish
+// coalescing operator evaluates to false and logs the specified string
+
+// use to check if an array is empty
+const usersEmpty = [];
+const users = [{ name: 'Matthew' }];
+console.log(usersEmpty[0]?.name ?? 'User array empty');
+//      |=> 'User array empty'
+console.log(users[0]?.name ?? 'User array empty');
+//      |=> 'Matthew'

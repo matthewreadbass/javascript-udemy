@@ -179,3 +179,24 @@ Enhanced Object Literals
         };
     Compute property names instead of having to write them out manually/literally
         ie. using array index positions/numeric calculations etc
+
+Optional Chaining (?.)
+
+    ES2020 Introduced
+    If a certain property does not exist, undefined is returned immediately (instead of an error)
+    Prevents having to use long, unnecesarry logic to test for the existance of things
+    Used for deeply-nested objects with lots of optional properties
+        object.method.questionableMethod?.finalMethod;
+            |=> if .questionableMethod exists, .finalMethod will run
+            |=> if not, will return undefined
+    Chain multiple Optional Chaining operators
+        object.method.questionableMethod?.questionableMethod2?.finalMethod;
+            |=> will return undefined if either .questionableMethod doesn't exist on the object
+    Can be used to check if a method exists before calling it
+        object.method?.()
+            |=> returns undefined if method does not exist
+    Optional Chaining works on arrays, checking if they are empty
+        const empty = [];
+        const arr = [{value: 1}];
+        empty[0]?.value ?? 'Array empty'; => 'Array empty'
+        arr[0]?.value ?? 'Array empty'; => 1
