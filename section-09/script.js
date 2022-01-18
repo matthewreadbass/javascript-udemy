@@ -687,4 +687,4 @@ console.log(rest.get(['an', 'array'])); // undefined
 // instead try...
 arr = ['an', 'array'];
 rest.set(arr, 'array');
-console.log(rest.get(['an', 'array'])); // 'array'
+console.log(rest.get(arr)); // 'array'
