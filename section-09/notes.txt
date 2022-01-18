@@ -212,3 +212,16 @@ Looping Objects: Object Keys, Values and Entries
         |=> creates an array of arrays housing all the entries of the specified property name
         |=> use destructuring to access individual elements
             |=> script.js line 549
+
+Sets
+
+    A collection of unique values
+    Cannot contain duplicates
+        const myFirstSet = new Set(['a', 'load', 'of', 'unique', 'values']);
+            Can input duplicate values, but the set will only contain one of each
+    Can hold mixed data types
+    Looks like an array
+    Is an iterable
+    The order of elements is irrelevant
+        Cannot access elements by index
+    Cannot retrieve values from a set (it is a set, not lots of individual items)

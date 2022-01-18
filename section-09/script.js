@@ -548,9 +548,9 @@ console.log(entries); // [['thu', {...}], ['fri', {...}], ['sat', {...}]]
 
 for (const [key {open, close}] of entries) {
   console.log(`On ${key} we open at ${open} and close at ${close}`);
-} // "On thu we open at 12 and close at 22" etc.  */
+} // "On thu we open at 12 and close at 22" etc.
 
-// Coding Challenge #2
+        // Coding Challenge #2
 
 const game = {
   team1: 'Bayern Munich',
@@ -612,4 +612,31 @@ const scorers = {};
 for (const goal of game.scored) {
   scorers[goal] = scorers[goal] ? scorers[goal] + 1 : 1;
 }
-console.log(scorers);
+console.log(scorers); */
+
+// Sets
+
+const ordersSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+console.log(ordersSet); // Set(3) {'Pasta', 'Pizza', 'Risotto'}
+console.log(new Set('Matthew')); // Set(6) {'M', 'a', 't', 'h', 'e', 'w'}
+console.log(ordersSet.size); // 3
+console.log(ordersSet.has('Pizza')); // true
+console.log(ordersSet.has('Bread')); // false
+ordersSet.add('Garlic Bread'); // {'Pasta', 'Pizza', 'Risotto', 'Garlic Bread'}
+ordersSet.delete('Risotto'); // {'Pasta', 'Pizza', 'Garlic Bread'}
+// ordersSet.clear() // {}
+
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+// how many different positions are there?
+console.log(new Set(staff).size);
+// what are they?
+// convert in to an array using the spread operator
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique); // ['Waiter', 'Chef', 'Manager']
