@@ -539,5 +539,13 @@ for (const day of properties) {
 console.log(openStr); // 'We are open on 3 days: thu, fri, sat,'
 
 // looping over values
+const values = Object.values(openingHours);
+console.log(values); // [{...}, {...}, {...}]
 
 // looping over keys and values together
+const entries = Object.entries(openingHours);
+console.log(entries); // [['thu', {...}], ['fri', {...}], ['sat', {...}]]
+
+for (const [key {open, close}] of entries) {
+  console.log(`On ${key} we open at ${open} and close at ${close}`);
+} // "On thu we open at 12 and close at 22" etc.
