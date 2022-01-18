@@ -505,9 +505,9 @@ const users = [{ name: 'Matthew' }];
 console.log(usersEmpty[0]?.name ?? 'User array empty');
 //      |=> 'User array empty'
 console.log(users[0]?.name ?? 'User array empty');
-//      |=> 'Matthew' */
+//      |=> 'Matthew'
 
-// Looping Objects: Object Keys, Values and Entries
+        // Looping Objects: Object Keys, Values and Entries
 
 //looping over property keys
 // use the for-of loop to loop over an array, not the objet itself
@@ -548,4 +548,69 @@ console.log(entries); // [['thu', {...}], ['fri', {...}], ['sat', {...}]]
 
 for (const [key {open, close}] of entries) {
   console.log(`On ${key} we open at ${open} and close at ${close}`);
-} // "On thu we open at 12 and close at 22" etc.
+} // "On thu we open at 12 and close at 22" etc.  */
+
+// Coding Challenge #2
+
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
+let goalCount = 0;
+for (const goal of game.scored) {
+  console.log(`Goal ${goalCount + 1}: ${goal}`);
+  goalCount++;
+}
+
+let averageOdd = 0;
+for (const odd of Object.values(game.odds)) {
+  averageOdd += odd;
+}
+console.log(averageOdd / Object.values(game.odds).length);
+
+console.log(`Odd of victory ${game.team1}: ${game.odds.team1} \n
+Odd of draw: ${game.odds.x} \n
+Odd of victory ${game.team2}: ${game.odds.team2}`);
+
+const scorers = {};
+for (const goal of game.scored) {
+  scorers[goal] = scorers[goal] ? scorers[goal] + 1 : 1;
+}
+console.log(scorers);
