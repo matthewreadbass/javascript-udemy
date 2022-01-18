@@ -593,10 +593,8 @@ const game = {
   },
 };
 
-let goalCount = 0;
-for (const goal of game.scored) {
-  console.log(`Goal ${goalCount + 1}: ${goal}`);
-  goalCount++;
+for (const [i, player] of game.scored.entries()) {
+  console.log(`Goal ${i + 1}: ${player}`);
 }
 
 let averageOdd = 0;
@@ -605,9 +603,10 @@ for (const odd of Object.values(game.odds)) {
 }
 console.log(averageOdd / Object.values(game.odds).length);
 
-console.log(`Odd of victory ${game.team1}: ${game.odds.team1} \n
-Odd of draw: ${game.odds.x} \n
-Odd of victory ${game.team2}: ${game.odds.team2}`);
+for (const [team, odd] of Object.entries(game.odds)) {
+  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+  console.log(`Odd of ${teamStr}: ${odd}`);
+}
 
 const scorers = {};
 for (const goal of game.scored) {
