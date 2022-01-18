@@ -612,9 +612,9 @@ const scorers = {};
 for (const goal of game.scored) {
   scorers[goal] = scorers[goal] ? scorers[goal] + 1 : 1;
 }
-console.log(scorers); */
+console.log(scorers);
 
-// Sets
+        // Sets
 
 const ordersSet = new Set([
   'Pasta',
@@ -639,4 +639,52 @@ console.log(new Set(staff).size);
 // what are they?
 // convert in to an array using the spread operator
 const staffUnique = [...new Set(staff)];
-console.log(staffUnique); // ['Waiter', 'Chef', 'Manager']
+console.log(staffUnique); // ['Waiter', 'Chef', 'Manager']  */
+
+// Maps: Fundamentals
+
+// create an empty map
+const rest = new Map();
+// populate the map using the .set method
+rest.set('name', 'Classico Italiano');
+rest.set(1, 'Firenze, Italy');
+// return values using .get and passing the key in as the argument
+console.log(rest.get('name')); // 'Classico Italiano'
+// .set both logs and updates the map
+console.log(rest.set(2, 'Lisbon, Portugal'));
+//    |=> Map(3) {'name' => 'Classico Italiano', 1 => 'Firenze, Italy', 2 => 'Lisbon, Portugal'}
+
+// because .set returns the updated map, we can chain set methods
+rest
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'We are open')
+  .set(false, 'We are closed');
+
+console.log(rest.get('name')); // 'Classico Italiano'
+console.log(rest.get(true)); // 'We are open'
+
+const time = 21;
+console.log(rest.get(time > rest.get(open) && time < rest.get('close')));
+//    |=> 'We are open'
+// time > rest.get(open) && time < rest.get('close') === true
+// rest.get(true) === 'We are open'
+
+// check if a map has a key
+rest.has('categories'); // true
+
+// delete map elements using the key
+rest.delete(2); // deletes {2 => 'Lisbon, Portugal'}
+
+rest.size; // shows how many objects in the map
+// newMap.clear(); // empties the map
+
+// when using an array as a key, it has to be defined before use
+rest.set(['an', 'array'], 'array');
+console.log(rest.get(['an', 'array'])); // undefined
+// the arrays on the above two lines are two seperate arrays in memory
+// instead try...
+arr = ['an', 'array'];
+rest.set(arr, 'array');
+console.log(rest.get(['an', 'array'])); // 'array'

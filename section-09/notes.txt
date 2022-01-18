@@ -225,3 +225,29 @@ Sets
     The order of elements is irrelevant
         Cannot access elements by index
     Cannot retrieve values from a set (it is a set, not lots of individual items)
+
+Maps
+
+    A data structure that we can use to map values to keys
+    Like an object, data is stored in key/value pairs
+    Unlike objects, Map keys can have any type (as oppossed to strings only in objects)
+        Keys could even be objects, arrays or other maps
+    Easiest to create an empty map before passing in data
+        const newMap = new Map();
+    Then use the .set method to populate the map object
+        newMap.set(<key>, <value>);
+    You can chain multiple .set methods
+        newMap
+            .set(1, 'one')
+            .set(2, 'two')
+            .set(3, 'three');
+    Use .has to see if a map has a key
+        newMap.has(2); => true
+        newMap.has(7); => false
+    Delete elements with their key
+        newMap.delete(3);
+        newMap.has(3); => false
+    See how many objectsare in a map with .size
+        newMap.size; => 3
+    Remove all elements from the map
+        newMap.clear();
