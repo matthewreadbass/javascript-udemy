@@ -723,9 +723,9 @@ const questionArr = [...question];
 console.log(questionArr);
 // map methods also available
 console.log([...questionArr.keys()]);
-console.log([...questionArr.values()]); */
+console.log([...questionArr.values()]);
 
-// Coding Challenge #3
+        // Coding Challenge #3
 
 const game = {
   team1: 'Bayern Munich',
@@ -795,4 +795,50 @@ console.log(
 for (const [min, event] of gameEvents) {
   const half = min <= 45 ? 'FIRST' : 'SECOND';
   console.log(`[${half} HALF] ${min}: ${event}`);
-}
+} */
+
+// Working with Strings
+
+// Part 1
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+
+console.log(plane[0]); // 'A'
+console.log(plane[1]); // '3'
+console.log(plane[2]); // '2'
+console.log(plane[3]); // '0'
+
+console.log('B737'[2]); // 3
+
+console.log(airline.length); // 16
+console.log('B737'.length); // 4
+
+console.log(airline.indexOf('r')); // 7
+console.log(airline.lastIndexOf('r')); // 11
+console.log(airline.indexOf('Portugal')); // 8
+console.log(airline.indexOf('portugal')); // -1
+//    |=> .indexOf is case sensitive
+//    |=> -1 means it doesn't exist
+
+console.log(airline.slice(4)); // 'Air Portugal'
+//    |=> 'sub-string' - a part of the original string
+//    |=> strings are imutable as they are a primitive datatype
+//    |=> .slice does not mutate the original string
+
+console.log(airline.slice(4, 7)); // 'Air'
+
+console.log(airline.slice(0, airline.indexOf(' '))); // 'TAP'
+console.log(airline.slice(airline.lastIndexOf(' ') + 1)); // 'Portugal'
+
+console.log(airline.slice(-2)); // 'al'
+
+const checkMiddleSeat = function (seat) {
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') {
+    console.log('Unlucky!');
+  } else console.log('Lucky you!');
+};
+
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');

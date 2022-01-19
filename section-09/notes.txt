@@ -305,3 +305,30 @@ Summary: Which Data Structure To Use
             Easy to compute size
             Use when you simply need to map keys to values
             Use when you need keys that are not strings
+
+Working with Strings
+
+    Get characters from index position
+        const string = 'strings';
+        string[0] => 's'
+    Also works on previously undefined strings
+        'I am a new string'[7]; => 'n'
+    Calculate length
+        string.length; => 7
+        'An undefined string'.length => 19
+    .indexOf method
+        string.indexOf('i') => 3
+        Only gives first occurrence
+        For last use .lastIndexOf
+            string.lastIndexOf('s') => 6
+    .slice method
+        returns string starting at a certain index position
+        argument is the index position of where the slice method starts
+            string.slice(2) => 'rings'
+        can also specify end parameters
+            string.slice(2, 6) => 'ring'
+            |=> sub-string ends BEFORE (not on) the ending index position
+            |=> sub-string length can be calculated by subtracting the starting index position from the ending index position
+                6 - 2 = 4 => string.slice(2, 6) will return a string of 4 characters
+        use a negative argument to specify index position relative to the end
+            string.slice(-3) => 'ngs'
