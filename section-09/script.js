@@ -875,13 +875,13 @@ console.log(announcement.replaceAll('door', 'gate'));
 //    |=> "All passengers come to boarding gate 23. That's boarding gate 23!"
 //    |=> replaces all, surprisingly
 
-const plane = 'Airbus A320';
-console.log(plane.includes('A320')); // true
-console.log(plane.includes('Boeing')); // false
-console.log(plane.startsWith('Airb')); // true
-console.log(plane.endsWith('10')); // false
+const airplane = 'Airbus A320';
+console.log(airplane.includes('A320')); // true
+console.log(airplane.includes('Boeing')); // false
+console.log(airplane.startsWith('Airb')); // true
+console.log(airplane.endsWith('10')); // false
 
-if (plane.startsWith('Airbus') && plane.endsWith('neo')) {
+if (airplane.startsWith('Airbus') && airplane.endsWith('neo')) {
   console.log('Part of the NEW Airbus family');
 }
 
@@ -897,3 +897,49 @@ const checkBaggage = function (items) {
 checkBaggage('I have a laptop, some Food and a Pocket Knife'); // 'You are NOT allowed on board'
 checkBaggage('Socks and Camera'); // 'Welcome on board'
 checkBaggage('snacks and a gun'); // 'You are NOT allowed on board'
+
+console.log('Matthew Read'.split(' ')); // ['Matthew', 'Read']
+
+const [firstName, lastName] = 'Matthew Read'.split(' ');
+console.log(firstName); // 'Matthew'
+console.log(lastName); // 'Read'
+
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName); // 'Mr. Matthew READ'
+
+const capitaliseName = function (name) {
+  const namesArr = name.split(' ');
+  const namesUpper = [];
+  for (const n of namesArr) {
+    namesUpper.push(n[0].toUpperCase() + n.slice(1));
+  }
+  console.log(namesUpper.join(' '));
+};
+capitaliseName('jessica ann smith davis');
+
+const capitaliseNameAlt = function (name) {
+  const namesArr = name.split(' ');
+  const namesUpper = [];
+  for (const n of namesArr) {
+    namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+  }
+  console.log(namesUpper.join(' '));
+};
+capitaliseNameAlt('jonas schmedtmann');
+
+const maskCreditCard = function (number) {
+  const str = number + ''; // shorthand way of converting a number to a string
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+console.log(maskCreditCard(73048972)); // '****8972'
+
+const badWeatherMessage = 'Bad weather... All departures delayed ';
+console.log(badWeatherMessage.repeat(10));
+
+const planesInLine = function (n) {
+  console.log(`There are ${n} planes in line ${'✈'.repeat(n)}`);
+};
+planesInLine(5);
+planesInLine(3);
+planesInLine(12);

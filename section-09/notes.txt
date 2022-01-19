@@ -332,16 +332,27 @@ Working with Strings
                 6 - 2 = 4 => string.slice(2, 6) will return a string of 4 characters
         use a negative argument to specify index position relative to the end
             string.slice(-3) => 'ngs'
-        .toLowerCase / .toUpperCase do what it sounds like they should
-        .trim removes white space (includes \n)
-            '   hello'.trim => 'hello'
-            .trimStart / .trimEnd also do as they say on the tin
-        .replace replaces characters
-            'cat'.replace('c', 'p'); => 'pat'
-            .replaceAll does as it should
-        .startsWith
-            returns true/false depending on if the string starts with the specified character(s)
-        .endsWith
-            as above, but at the end...
-        .includes
-            returns true/false dependant on if the argument string is included in the string being searched
+    .toLowerCase / .toUpperCase do what it sounds like they should
+    .trim removes white space (includes \n)
+        '   hello'.trim => 'hello'
+        .trimStart / .trimEnd also do as they say on the tin
+    .replace replaces characters
+        'cat'.replace('c', 'p'); => 'pat'
+    .replaceAll does as it should
+    .startsWith
+        returns true/false depending on if the string starts with the specified character(s)
+    .endsWith
+        as above, but at the end...
+    .includes
+        returns true/false dependant on if the argument string is included in the string being searched
+    .split enables you to split a string in to multiple strings based on a divider string
+        stores the results as elements of a new array
+        'a+very+nice+string'.split('+'); => ['a', 'very', 'nice', 'string']
+    .join is the opposite of split
+        specify character(s) to going between joined elements
+    .padStart adds characters to the beginning of the string
+        'hello'.padStart(10, '-'); => '-----hello'
+        |=> number specifies how long you want the final string to be
+    .padEnd does same as .padStart, but at the end
+    .repeat allows you to repeat the same string multiple times
+        'hello '.repeat(3) => 'hello hello hello '
