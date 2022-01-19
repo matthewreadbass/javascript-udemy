@@ -247,7 +247,15 @@ Maps
     Delete elements with their key
         newMap.delete(3);
         newMap.has(3); => false
-    See how many objectsare in a map with .size
+    See how many objects are in a map with .size
         newMap.size; => 3
     Remove all elements from the map
         newMap.clear();
+    Populate a new map without .set method
+        const mapName = newMap([
+            [key1, value1],
+            [key2, value2],
+            [key3, value3]
+        ])
+    Convert a map to an array using the spread operator
+        const arr = [...map];

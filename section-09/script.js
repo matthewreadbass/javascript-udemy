@@ -639,9 +639,9 @@ console.log(new Set(staff).size);
 // what are they?
 // convert in to an array using the spread operator
 const staffUnique = [...new Set(staff)];
-console.log(staffUnique); // ['Waiter', 'Chef', 'Manager']  */
+console.log(staffUnique); // ['Waiter', 'Chef', 'Manager']
 
-// Maps: Fundamentals
+        // Maps: Fundamentals
 
 // create an empty map
 const rest = new Map();
@@ -668,7 +668,7 @@ console.log(rest.get(true)); // 'We are open'
 const time = 21;
 console.log(rest.get(time > rest.get(open) && time < rest.get('close')));
 //    |=> 'We are open'
-// time > rest.get(open) && time < rest.get('close') === true
+// time > rest.get('open') && time < rest.get('close') === true
 // rest.get(true) === 'We are open'
 
 // check if a map has a key
@@ -687,4 +687,40 @@ console.log(rest.get(['an', 'array'])); // undefined
 // instead try...
 arr = ['an', 'array'];
 rest.set(arr, 'array');
-console.log(rest.get(arr)); // 'array'
+console.log(rest.get(arr)); // 'array'   */
+
+// Maps: Iteration
+
+// instead of .set
+const question = new Map([
+  ['question', 'what is the best programming language?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'JavaScript'],
+  ['correct', 3],
+  [true, 'Correct!'],
+  [false, 'Try again'],
+]);
+// the above is the same array structure as is returned when
+// calling Object.entries()
+// Use this ^ to convert objects to maps
+
+const hoursMap = new Map(Object.entries(restaurant.openingHours));
+// converts restaurant.openingHours object to a map
+console.log(hoursMap);
+
+// using a for loop to iterate over a map
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+}
+const answer = Number(prompt('Your answer:'));
+console.log(
+  question.get('correct') === answer ? question.get(true) : question.get(false)
+);
+
+// converting maps to arrays
+const questionArr = [...question];
+console.log(questionArr);
+// map methods also available
+console.log([...questionArr.keys()]);
+console.log([...questionArr.values()]);
