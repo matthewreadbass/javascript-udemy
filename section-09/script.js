@@ -687,9 +687,9 @@ console.log(rest.get(['an', 'array'])); // undefined
 // instead try...
 arr = ['an', 'array'];
 rest.set(arr, 'array');
-console.log(rest.get(arr)); // 'array'   */
+console.log(rest.get(arr)); // 'array'
 
-// Maps: Iteration
+        // Maps: Iteration
 
 // instead of .set
 const question = new Map([
@@ -723,4 +723,6 @@ const questionArr = [...question];
 console.log(questionArr);
 // map methods also available
 console.log([...questionArr.keys()]);
-console.log([...questionArr.values()]);
+console.log([...questionArr.values()]); */
+
+//

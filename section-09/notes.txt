@@ -259,3 +259,49 @@ Maps
         ])
     Convert a map to an array using the spread operator
         const arr = [...map];
+
+Summary: Which Data Structure To Use
+
+    Sources of data:
+        The program itself - data written directly in the source code
+        The UI - data input from the user or data written in the DOM
+        External sources - Data fetched from an API etc
+    The above are all collections of data - but where do we store them?
+        |=> Data Structures! But which one?
+            - Simple list? -> Arrays/Sets
+            - Key/value pairs? -> Objects/Maps
+        Other built in Data Structures:
+            WeakMap
+            WeakSet
+        Non-built in:
+            Stacks
+            Queues
+            Linked lists
+            Trees
+            Hash Tables
+    
+    Arrays vs Sets
+        Use either for simple lists of values
+        Arrays:
+            Use when you need ordered lists of values
+            Use when you want/can handle duplicates
+            Use when you need to manipulate data
+        Sets:
+            Use when you need unique values
+            Use when high-performance is really important
+            Use to remove duplicates form arrays
+    
+    Objects vs Maps
+        Use either when you need key/value pairs/you want to describe values with keys
+        Objects:
+            More tRaditional key/value store ("abused" objects)
+            Easier to write and access values with . and [] syntax
+            Use when you need to include functions (methods)
+            Use when working with JSON (can convert to map)
+        Maps:
+            Better performance
+            Keys can have any data type
+            Easy to iterate over
+            Easy to compute size
+            Use when you simply need to map keys to values
+            Use when you need keys that are not strings
