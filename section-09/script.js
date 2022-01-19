@@ -795,11 +795,10 @@ console.log(
 for (const [min, event] of gameEvents) {
   const half = min <= 45 ? 'FIRST' : 'SECOND';
   console.log(`[${half} HALF] ${min}: ${event}`);
-} */
+}
 
-// Working with Strings
+        // Working with Strings
 
-// Part 1
 const airline = 'TAP Air Portugal';
 const plane = 'A320';
 
@@ -942,4 +941,29 @@ const planesInLine = function (n) {
 };
 planesInLine(5);
 planesInLine(3);
-planesInLine(12);
+planesInLine(12); */
+
+// Coding Challenge #4
+
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+
+document.querySelector('button').addEventListener('click', function () {
+  const text = document.querySelector('textarea').value;
+  const lines = text.split('\n');
+  console.log(lines); // ***** how do i capitalise the fist char of the second word ONLY & remove underscores *****
+  // const lineArr =
+  // for (const line of lines) {
+  //   const lineArr = line.trim().toLowerCase().split('_');
+  //   console.log(lineArr);
+  //   for (const [item1, item2] of lineArr) {
+  //     console.log(item1);
+  //   }
+  // }
+});
+
+// underscore_case
+// first_name
+// Some_Variable
+// calculate_AGE
+// delayed_departure
