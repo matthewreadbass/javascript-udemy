@@ -842,3 +842,58 @@ const checkMiddleSeat = function (seat) {
 checkMiddleSeat('11B');
 checkMiddleSeat('23C');
 checkMiddleSeat('3E');
+
+console.log(airline.toUpperCase()); // 'TAP AIR PORTUGAL'
+console.log(airline.toLowerCase()); // 'tap air portugal'
+
+// fix capitalisation in name
+const fixedCapitals = function (passenger) {
+  const passengerLower = passenger.toLowerCase();
+  return passengerLower[0].toUpperCase() + passengerLower.slice(1);
+};
+console.log(fixedCapitals('mAtthew'));
+
+// comparing emails
+const compareEmails = function (email1, email2) {
+  const normalisedEmail1 = email1.toLowerCase().trim();
+  const normalisedEmail2 = email2.toLowerCase().trim();
+  return normalisedEmail1 === normalisedEmail2;
+};
+console.log(compareEmails('matthew@myemail.org', '   Matthew@MyEmail.org \n'));
+
+// replacing
+const priceGB = '£78.00';
+const priceGer = priceGB.replace('£', '€').replace('.', ','); // '€78,00'
+
+const announcement =
+  "All passengers come to boarding door 23. That's boarding door 23!";
+
+console.log(announcement.replace('door', 'gate'));
+//    |=> "All passengers come to boarding gate 23. That's boarding door 23!"
+//    |=> only replaces the first instance
+console.log(announcement.replaceAll('door', 'gate'));
+//    |=> "All passengers come to boarding gate 23. That's boarding gate 23!"
+//    |=> replaces all, surprisingly
+
+const plane = 'Airbus A320';
+console.log(plane.includes('A320')); // true
+console.log(plane.includes('Boeing')); // false
+console.log(plane.startsWith('Airb')); // true
+console.log(plane.endsWith('10')); // false
+
+if (plane.startsWith('Airbus') && plane.endsWith('neo')) {
+  console.log('Part of the NEW Airbus family');
+}
+
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('You are NOT allowed on board');
+  } else {
+    console.log('Welcome on board');
+  }
+};
+
+checkBaggage('I have a laptop, some Food and a Pocket Knife'); // 'You are NOT allowed on board'
+checkBaggage('Socks and Camera'); // 'Welcome on board'
+checkBaggage('snacks and a gun'); // 'You are NOT allowed on board'
