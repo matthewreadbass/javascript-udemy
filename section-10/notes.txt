@@ -1,0 +1,20 @@
+A Closer Look At Functions
+
+Default Parameters
+
+    Sometimes useful to have default parameters incase no parameters are passed in
+        const aFunction = function (param1 = 100, param2 = 'default') {
+            console.log(param1, param2);
+        }
+            |=> afunction(); => 100, 'default'
+            |=> aFunction(1); => 1, 'default'
+            |=> aFunction(1, 7); => 1, 7
+    Otherwise parameters are undefined
+    Can use values of previous input values to assign defaults
+        const anotherFunction = function (param1, param2 = param1 * 2) {
+            console.log(param1, param2);
+        }
+            |=> anotherfunction(35); => 35, 70
+            |=> anotherfunction(35, 36); => 35, 36
+    Skip an argument by setting it as undefined
+        aFunction(undefined, 'cheese'); => 100, 'cheese'
