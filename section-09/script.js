@@ -967,16 +967,14 @@ const flights =
 //            Departure from/FAO to/LIS/(12h30)
 
 const flightDecoder = function (message) {
-  const flightsArr = flights.split('+');
-  console.log(flightsArr);
-  for (const flight of flightsArr) {
+  for (const flight of message.split('+')) {
     let [one, two, three, four] = flight.split(';');
-    one = `${one.slice(1).replace('_', ' ')} from`;
+    one = `${one.replace('_', ' ')} from`;
     two = `${two.slice(0, 3).toUpperCase()} to`;
     three = `${three.slice(0, 3).toUpperCase()}`;
-    let string = `${one} ${two} ${three} (${four})`;
-    if (string.startsWith('Delayed')) {
-      string = `🔴 ${string}`;
+    let string = `${one} ${two} ${three} (${four.replace(':', 'h')})`;
+    if (string.startsWith(' Delayed')) {
+      string = `🔴${string}`;
       console.log(string.padStart(45, ' '));
     } else {
       console.log(string.padStart(45, ' '));
