@@ -950,20 +950,16 @@ document.body.append(document.createElement('button'));
 
 document.querySelector('button').addEventListener('click', function () {
   const text = document.querySelector('textarea').value;
-  const lines = text.split('\n');
-  console.log(lines); // ***** how do i capitalise the fist char of the second word ONLY & remove underscores *****
-  // const lineArr =
-  // for (const line of lines) {
-  //   const lineArr = line.trim().toLowerCase().split('_');
-  //   console.log(lineArr);
-  //   for (const [item1, item2] of lineArr) {
-  //     console.log(item1);
-  //   }
-  // }
+  const linesArr = text.split('\n');
+  let i = 1;
+  for (const line of linesArr) {
+    const trimmedLine = line.trim().toLowerCase();
+    const [firstHalf, secondHalf] = trimmedLine.split('_');
+    const camelCase =
+      firstHalf + secondHalf[0].toUpperCase() + secondHalf.slice(1);
+    const paddedLine = camelCase.padEnd(20, ' ');
+    const output = `${paddedLine}${'✔'.repeat(i)}`;
+    console.log(output);
+    i++;
+  }
 });
-
-// underscore_case
-// first_name
-// Some_Variable
-// calculate_AGE
-// delayed_departure
