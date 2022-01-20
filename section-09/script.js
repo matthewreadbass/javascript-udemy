@@ -950,16 +950,12 @@ document.body.append(document.createElement('button'));
 
 document.querySelector('button').addEventListener('click', function () {
   const text = document.querySelector('textarea').value;
-  const linesArr = text.split('\n');
-  let i = 1;
-  for (const line of linesArr) {
-    const trimmedLine = line.trim().toLowerCase();
-    const [firstHalf, secondHalf] = trimmedLine.split('_');
+  const lines = text.split('\n');
+  for (const [i, line] of lines.entries()) {
+    const [firstHalf, secondHalf] = line.trim().toLowerCase().split('_');
     const camelCase =
       firstHalf + secondHalf[0].toUpperCase() + secondHalf.slice(1);
-    const paddedLine = camelCase.padEnd(20, ' ');
-    const output = `${paddedLine}${'✔'.repeat(i)}`;
+    const output = `${camelCase.padEnd(20, ' ')}${'✔'.repeat(i + 1)}`;
     console.log(output);
-    i++;
   }
 });
