@@ -14,7 +14,8 @@ Default Parameters
         const anotherFunction = function (param1, param2 = param1 * 2) {
             console.log(param1, param2);
         }
-            |=> anotherfunction(35); => 35, 70
-            |=> anotherfunction(35, 36); => 35, 36
+            |=> anotherFunction(35); => 35, 70
+            |=> anotherFunction(35, 36); => 35, 36
     Skip an argument by setting it as undefined
         aFunction(undefined, 'cheese'); => 100, 'cheese'
+
