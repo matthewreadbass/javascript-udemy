@@ -19,3 +19,18 @@ Default Parameters
     Skip an argument by setting it as undefined
         aFunction(undefined, 'cheese'); => 100, 'cheese'
 
+First-Class and High-Order Functions
+
+    First-Class functions:
+        JS treats functions as first-class citizens
+        This means that functions a simply values
+        Functions are just another 'type' of object
+            Store functions in variables of properties
+            Pass functions as arguments to OTHER functions
+            Return functions FROM functions
+            Call methods on functions
+    
+    Higher-Order functions:
+        A function that receives another function as an argument, that returns a function or both
+        This is only possible because of first-class functions
+        

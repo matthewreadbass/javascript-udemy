@@ -24,7 +24,7 @@ const createBooking = function (
 createBooking('LH125'); // {flightNum: 'LH125', numPassengers: 1, price: 80)}
 createBooking('LH125', 2, 800); // {flightNum: 'LH125', numPassengers: 2, price: 800)}
 
-                // How Passing Arguments Works: Value vs. Reference */
+                // How Passing Arguments Works: Value vs. Reference
 
 const flight = 'LH234';
 const matthew = {
@@ -63,3 +63,5 @@ checkIn(flight, matthew); // checking in - passport number has changed (complex 
 // pass the value itself
 // Passing by Reference - not available in JavaScript
 // pass a reference to any value, rather than the value itself, even with primitives
+
+                //   */
