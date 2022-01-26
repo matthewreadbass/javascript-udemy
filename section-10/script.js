@@ -92,7 +92,7 @@ const high5 = function () {
 document.body.addEventListener('click', high5);
 tion[('Matthew', 'Kim', 'Harry')].forEach(high5);
 
-                // Functions Returning Functions  */
+                // Functions Returning Functions
 
 const greet = function (greeting) {
   return function (name) {
@@ -110,3 +110,45 @@ greet('Hello,')('Harry'); // => 'Hello, Harry'
 const greet2 = greeting => name => console.log(`${greeting} ${name}`);
 
 greet2('Hi,')('Steve'); // => 'Hi, Steve'
+
+                // The Call and Apply Methods  */
+
+const lufthansa = {
+  airline: 'Lufthansa',
+  iataCode: 'LH',
+  bookings: [],
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+    );
+    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
+  },
+};
+
+lufthansa.book(239, 'Matthew Read'); // 'Matthew Read booked a seat on Lufthansa flight LH239'
+lufthansa.book(782, 'Kim Syvret'); // 'Kim Syvret booked a seat on Lufthansa flight LH782'
+console.log(lufthansa.bookings); // bookings is an array of objects, each object containing
+// flight num & passenger name from above .book methods
+
+const eurowings = {
+  airline: 'Eurowings',
+  iataCode: 'EW',
+  bookings: [],
+};
+
+const book = lufthansa.book;
+
+// Call method
+book.call(eurowings, 713, 'Steven'); // 'Steven booked a seat on Eurowings flight EW713'
+console.log(eurowings.bookings); // [{flight: 'EW713', name: 'Steven'}]
+
+const swiss = {
+  airline: 'Swiss Air Lines',
+  iataCode: 'LX',
+  bookings: [],
+};
+
+// Apply method
+const flightData = [583, 'Jeremy Usborne'];
+book.apply(swiss, flightData); // 'Jeremy Usborne booked a seat on Swiss Air Lines flight LX583'
+console.log(swiss.bookings); // [{flight: 'LX583', name: 'Jeremy Usborne'}]

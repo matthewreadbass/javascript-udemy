@@ -40,3 +40,20 @@ Functions Accepting Callback Functions
     Allow us to create abstraction
         - Hide the detail of problems, so that they can be viewed from a more higher-level, more abstract perspective
     High-level/low-level are to do with the level of abstraction
+
+The Call and Apply Methods
+
+    .call
+        - function.call(<object-for-.this-to-point-to>, arguments);
+        - a method to be called on a function
+        - first argument is what you want the .this keyword to point to
+        - the following arguments are the original arguments of the function call
+        - enables us to manually and explicitly set the .this keyword of any function we want to call
+    .apply
+        - function.apply(<object-for-.this-to-point-to>, [array, of, arguments]);
+        - does essentially the same thing as the .call method, except that it doesn't
+        receive a list of arguments after the .this keyword
+        - instead accepts an array of arguments
+        - not used that much any more in modern JavaScript
+            - instead, use .call with the spread operator
+            - - function.call(<object-for-.this-to-point-to>, ...array-of-arguments);
