@@ -217,3 +217,31 @@ const poll = {
   options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
   answers: new Array(4).fill(0),
 };
+
+const promptText = `${poll.question}
+${poll.options[0]}
+${poll.options[1]}
+${poll.options[2]}
+${poll.options[3]}
+(Write option number)`;
+
+const displayResults = function (type) {
+  if (type === 'array') {
+    console.log(poll.answers);
+  } else if (type === 'string') {
+    console.log(
+      `Poll results are ${poll.answers[0]}, ${poll.answers[1]}, ${poll.answers[2]}, ${poll.answers[3]}`
+    );
+  }
+};
+
+document.querySelector('.poll').addEventListener('click', function () {
+  let answer = prompt(promptText);
+  console.log(poll.answers.length);
+  if (answer < poll.options.length) {
+    poll.answers[answer]++;
+  }
+
+  displayResults('array');
+  displayResults('string');
+});
