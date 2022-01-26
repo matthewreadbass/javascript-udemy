@@ -64,4 +64,30 @@ checkIn(flight, matthew); // checking in - passport number has changed (complex 
 // Passing by Reference - not available in JavaScript
 // pass a reference to any value, rather than the value itself, even with primitives
 
-                //   */
+                // Functions Accepting Callback Functions  */
+
+const oneWord = function (str) {
+  return str.replace(/ /g, '').toLowerCase();
+};
+
+const upperFirstWord = function (str) {
+  const [first, ...others] = str.split(' ');
+  return [first.toUpperCase(), ...others].join(' ');
+};
+
+//Higher-order function
+const transformer = function (str, func) {
+  console.log(`Original string: ${str}`);
+  console.log(`Transformed string: ${func(str)}`);
+  console.log(`Transformed by: ${func.name}`);
+};
+
+transformer('JavaScript is the best', upperFirstWord);
+transformer('JavaScript is the best', oneWord);
+
+// JS callback functions are also higher-order functions
+const high5 = function () {
+  console.log('🙌');
+};
+document.body.addEventListener('click', high5);
+tion[('Matthew', 'Kim', 'Harry')].forEach(high5);

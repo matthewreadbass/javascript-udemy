@@ -33,4 +33,10 @@ First-Class and High-Order Functions
     Higher-Order functions:
         A function that receives another function as an argument, that returns a function or both
         This is only possible because of first-class functions
-        
+
+Functions Accepting Callback Functions
+
+    Enables us to split up our code in to more re-usable/inter-connected parts
+    Allow us to create abstraction
+        - Hide the detail of problems, so that they can be viewed from a more higher-level, more abstract perspective
+    High-level/low-level are to do with the level of abstraction
