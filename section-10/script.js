@@ -111,7 +111,7 @@ const greet2 = greeting => name => console.log(`${greeting} ${name}`);
 
 greet2('Hi,')('Steve'); // => 'Hi, Steve'
 
-                // The Call and Apply Methods  */
+                // The Call and Apply Methods
 
 const lufthansa = {
   airline: 'Lufthansa',
@@ -209,3 +209,11 @@ const addVAT2 = addTaxRate(0.18); // set the constant argument (value)
 // create new function addVAT - the function returned by addTaxRate
 console.log(addVAT2(100)); // 118
 console.log(addVAT2(27)); // 31.86
+
+                // Coding Challenge #1  */
+
+const poll = {
+  question: 'What is your favourite programming language?',
+  options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
+  answers: new Array(4).fill(0),
+};
