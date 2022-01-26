@@ -64,7 +64,7 @@ checkIn(flight, matthew); // checking in - passport number has changed (complex 
 // Passing by Reference - not available in JavaScript
 // pass a reference to any value, rather than the value itself, even with primitives
 
-                // Functions Accepting Callback Functions  */
+                // Functions Accepting Callback Functions
 
 const oneWord = function (str) {
   return str.replace(/ /g, '').toLowerCase();
@@ -91,3 +91,22 @@ const high5 = function () {
 };
 document.body.addEventListener('click', high5);
 tion[('Matthew', 'Kim', 'Harry')].forEach(high5);
+
+                // Functions Returning Functions  */
+
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+
+const greeterHey = greet('Hey,');
+greeterHey('Matthew'); // => 'Hey, Matthew'
+greeterHey('Kim'); // => 'Hey, Kim'
+
+greet('Hello,')('Harry'); // => 'Hello, Harry'
+
+// Challenge
+const greet2 = greeting => name => console.log(`${greeting} ${name}`);
+
+greet2('Hi,')('Steve'); // => 'Hi, Steve'
