@@ -152,3 +152,60 @@ const swiss = {
 const flightData = [583, 'Jeremy Usborne'];
 book.apply(swiss, flightData); // 'Jeremy Usborne booked a seat on Swiss Air Lines flight LX583'
 console.log(swiss.bookings); // [{flight: 'LX583', name: 'Jeremy Usborne'}]
+
+// Bind method
+// book.call(eurowings, 713, 'Mark Chapman');
+const bookEW = book.bind(eurowings);
+bookEW(713, 'Mark Chapman'); // the .this keyword is permanently set to eurowings for this function call
+//  |=> 'Mark Chapman booked a seat on Eurowings flight EW713'
+console.log(eurowings.bookings); // [{flight: 'EW713', name: 'Steven'}, {flight: 'EW713', name: 'Mark Chapman'}]
+// enables us to create a book function for each individual airline if we need to call the
+// function multiple times for each airline - keeps code DRY
+
+// pass in multiple arguments to be set in stone (ie. make a method for each flight number)
+const bookEW23 = book.bind(eurowings, 23);
+bookEW23('Matthew Read'); // 'Matthew Read booked a seat on Eurowings flight EW23'
+bookEW23('Benedict Wood'); // 'Benedict Wood booked a seat on Eurowings flight EW23'
+bookEW23('Arthur Newell'); // 'Arthur Newell booked a seat on Eurowings flight EW23'
+console.log(eurowings.bookings);
+//  |=> [{flight: 'EW713', name: 'Steven'},
+//      {flight: 'EW713', name: 'Mark Chapman'},
+//      {flight: 'EW23', name: 'Matthew Read'},
+//      {flight: 'EW23', name: 'Benedict Wood'},
+//      {flight: 'EW23', name: 'Arthur Newell'}]
+//          MRT are going on tour
+
+// with event listeners
+lufthansa.planes = 300;
+
+lufthansa.buyPlane = function () {
+  console.log(this);
+  this.planes++;
+  console.log(this.planes); // => without the .bind method below,
+  // .this points to the button, as the eventListener is attached to the button element
+};
+document
+  .querySelector('.buy')
+  .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+
+// partial application
+const addTax = (rate, value) => value + value * rate;
+console.log(addTax(0.1, 200));
+
+const addVAT = addTax.bind(null, 0.23); // there is no .this keyword, so set to null
+console.log(addVAT(100)); // 123
+console.log(addVAT(23)); // 28.29
+
+// write a function that returns a function that does the same as above
+
+const addTaxRate = function (rate) {
+  // create a new function (with the consistant argument called)
+  return function (value) {
+    // original function returns new function
+    return value + value * rate; // return value of new function
+  };
+};
+const addVAT2 = addTaxRate(0.18); // set the constant argument (value)
+// create new function addVAT - the function returned by addTaxRate
+console.log(addVAT2(100)); // 118
+console.log(addVAT2(27)); // 31.86

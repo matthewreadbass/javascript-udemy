@@ -56,4 +56,26 @@ The Call and Apply Methods
         - instead accepts an array of arguments
         - not used that much any more in modern JavaScript
             - instead, use .call with the spread operator
-            - - function.call(<object-for-.this-to-point-to>, ...array-of-arguments);
+            - function.call(<object-for-.this-to-point-to>, ...array-of-arguments);
+
+The Bind Methods
+
+    .bind
+        - just like .call/.apply, allows us to manually set the .this keyword for any function call
+        - .bind doesn't however immediately call the function
+        - instead, it calls a new function where the .this keyword is 'bound'
+            const Obj1Func = function.bind(object1);
+            obj1Func(<arguments>);
+                - the .this keyword is permanently set to object1 for the objFunc function
+        - enables you to create multiple versions of the same function on multiple different objects
+        whilst keeping your code dry
+        - can pass in multiple arguments to be "set in stone"
+            - (script.js => MRT are going on tour)
+        - 'Partial Application'
+            - some of the arguments of the original function are already applied
+            - use .bind to pre-set argument values by setting where .this points to to null\
+                const Obj1Func = function.bind(null, 23);
+                    - this function doesn't have a .this keyword, so set to null
+                    - partially apply argument values
+            - different from default parameters as it creates a brand new, more specific function
+            instead of the original function being changed
