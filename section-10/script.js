@@ -247,7 +247,7 @@ document.querySelector('.poll').addEventListener('click', function () {
 });
 
 
-                // Immediately Invoked Function Expressions  */
+                // Immediately Invoked Function Expressions
 
 (function () {
   console.log('This will never run again');
@@ -257,3 +257,23 @@ console.log(isPrivate); // => Uncaught ReferenceError: isPrivate is not defined
 //  |=> isPrivate is not in the global scope, but instead part of the scope of the above un-named function
 
 (() => console.log('This will also never run again'))();
+
+                // Closures  */
+
+const secureBooking = function () {
+  let passengerCount = 0;
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passengers`);
+  };
+};
+
+const booker = secureBooking();
+
+booker(); // 1 passengers
+booker(); // 2 passengers
+booker(); // 3 passengers
+// able to update the passengerCount variable despite passengerCount being defined
+// within the scope of the secureBooking function
+//  |=> a closure
+console.dir(booker);
