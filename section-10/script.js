@@ -277,3 +277,49 @@ booker(); // 3 passengers
 // within the scope of the secureBooking function
 //  |=> a closure
 console.dir(booker);
+
+// more closure examples (1)
+let f;
+const g = function () {
+  const a = 23;
+  f = function () {
+    console.log(a * 2);
+  };
+};
+
+// g();
+// f(); // 46
+
+const h = function () {
+  const b = 777;
+  f = function () {
+    console.log(b * 2);
+  };
+};
+
+g();
+f(); // 46
+console.dir(f);
+//  |=>   [[Scopes]]: Scopes[3]
+//        0: Closure (g) {a: 23}
+
+// reassigning h function
+h();
+f(); // 1554
+console.dir(f);
+//  |=>   [[Scopes]]: Scopes[3]
+//        0: Closure (h) {b: 777}
+
+// Example 2
+const boardPassengers = function (n, wait) {
+  const perGroup = n / 3;
+
+  setTimeout(function () {
+    console.log(`We are now boarding all ${n} passengers`);
+    console.log(`There are three groups, each with ${perGroup} passengers`);
+  }, wait * 1000);
+
+  console.log(`Will start boarding in ${wait} seconds`);
+};
+
+boardPassengers(180, 3); // line 322 will log 3 seconds before lines 318 & 319
