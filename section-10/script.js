@@ -258,7 +258,7 @@ console.log(isPrivate); // => Uncaught ReferenceError: isPrivate is not defined
 
 (() => console.log('This will also never run again'))();
 
-                // Closures  */
+                // Closures
 
 const secureBooking = function () {
   let passengerCount = 0;
@@ -323,3 +323,13 @@ const boardPassengers = function (n, wait) {
 };
 
 boardPassengers(180, 3); // line 322 will log 3 seconds before lines 318 & 319
+
+                // Coding Challenge #2  */
+
+(function () {
+  const header = document.querySelector('h1');
+  header.style.color = 'red';
+  document.querySelector('body').addEventListener('click', function () {
+    header.style.color = 'blue';
+  });
+})();
