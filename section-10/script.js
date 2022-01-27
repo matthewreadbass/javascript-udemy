@@ -210,7 +210,7 @@ const addVAT2 = addTaxRate(0.18); // set the constant argument (value)
 console.log(addVAT2(100)); // 118
 console.log(addVAT2(27)); // 31.86
 
-                // Coding Challenge #1  */
+                // Coding Challenge #1
 
 const poll = {
   question: 'What is your favourite programming language?',
@@ -245,3 +245,15 @@ document.querySelector('.poll').addEventListener('click', function () {
   displayResults('array');
   displayResults('string');
 });
+
+
+                // Immediately Invoked Function Expressions  */
+
+(function () {
+  console.log('This will never run again');
+  const isPrivate = 'sshhhh';
+})();
+console.log(isPrivate); // => Uncaught ReferenceError: isPrivate is not defined
+//  |=> isPrivate is not in the global scope, but instead part of the scope of the above un-named function
+
+(() => console.log('This will also never run again'))();

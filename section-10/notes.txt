@@ -79,3 +79,18 @@ The Bind Methods
                     - partially apply argument values
             - different from default parameters as it creates a brand new, more specific function
             instead of the original function being changed
+
+Immediately Invoked Function Expressions
+
+    - A function that is only executed once and then disappears after it is called once
+    - Write a function statement without assigning it a name, wrap it in parentheses
+    (to convert it in to an expression) and put a pair of empty brackets after
+        |=> (function () {<function-body>})();
+        |=> no name, immediately invoked can't be called again
+    - Same idea works for an arrow function
+        |=> (() => <function-body>)();
+    Why was this invented?
+        Makes the data stored in the function scope are private / encapsulated
+        Not possible to alter / access / delete the private data outside of the scope of the function
+            Also possible in the scope of a block using const/let (but not var)
+    Old syntax - not used so much anymore
