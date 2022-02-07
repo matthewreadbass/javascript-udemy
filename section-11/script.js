@@ -61,6 +61,22 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
+// Creating DOM Elements
+
+const displayMovements = function (movements) {
+  containerMovements.innerHTML = '';
+
+  movements.forEach(function (mov, i) {
+    const type = mov > 0 ? 'deposit' : 'withdrawal';
+    const html = `<div class="movements__row">
+    <div class="movements__type movements__type--${type}">${i + 1} ${type}</div>
+    <div class="movements__value">${mov}</div>
+  </div>`;
+    containerMovements.insertAdjacentHTML('afterbegin', html);
+  });
+};
+displayMovements(account1.movements);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -177,16 +193,14 @@ movements.forEach(function (movement, i, arr) {
 });
 // continue and break do not work in forEach statements
 
-                // forEach with Maps and Sets */
+                // forEach with Maps and Sets
 // using currencies map from above
 
 // Maps
 currencies.forEach(function (value, key, map) {
   console.log(`${key}: ${value}`);
 });
-// |=> USD: United States dollar
-// EUR: Euro
-// GBP: Pound sterling
+// |=> USD: United States dollar 
 
 // Sets
 const currenciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR']);
@@ -198,4 +212,4 @@ currenciesUnique.forEach(function (value, key, map) {
 // EUR: EUR
 // GBP: GBP
 // *****There are no keys in a set, but it is kept in the argument list for consistency*****
-// Convention is to use an underscore or similar for such instances ("throwaway variables")
+// Convention is to use an underscore or similar for such instances ("throwaway variables") */
