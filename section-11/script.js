@@ -233,7 +233,7 @@ const checkDogs = function (dogsJulia, dogsKate) {
 checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
 checkDogs([9, 16, 6, 8, 3], [10, 5, 6, 1, 4]);
 
-                // Data Transformations: map, filter, reduce  */
+                // Data Transformations: map, filter, reduce
 
 // Map - use to loop over an Array. Similar to the forEach PaymentMethodChangeEvent, except that Map creates a brand new
 // array based on the original array. Takes an array, loops over that array and on each iteration applies a callback function
@@ -244,3 +244,32 @@ checkDogs([9, 16, 6, 8, 3], [10, 5, 6, 1, 4]);
 
 // Reduce - reduces all array elements down to one single value (eg. adding all of the elements together). Does not return
 // an array, only the "reduced" value
+
+                // The map Method */
+
+const eurToUsd = 1.1;
+console.log(movements);
+
+// with the map method
+let movementsUSD = movements.map(function (mov) {
+  return mov * eurToUsd;
+});
+console.log(movementsUSD);
+
+// the map method with an arrow function
+movementsUSD = movements.map(mov => mov * eurToUsd);
+console.log(movementsUSD);
+
+// with a for of loop
+const movementsUSDfor = [];
+for (const mov of movements) movementsUSDfor.push(mov * eurToUsd);
+console.log(movementsUSDfor);
+
+// accessing value, index and entire array
+const movementsDescriptions = movements.map(
+  (mov, i) =>
+    `Transaction #${i + 1}: You ${
+      mov > 0 ? 'deposited' : 'withdrew'
+    } ${Math.abs(mov)}`
+);
+console.log(movementsDescriptions);
