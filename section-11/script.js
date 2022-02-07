@@ -77,6 +77,21 @@ const displayMovements = function (movements) {
 };
 displayMovements(account1.movements);
 
+// Computing Usernames
+
+const createUsernames = function (accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(' ')
+      .map(name => name[0])
+      .join('');
+  });
+};
+
+createUsernames(accounts);
+console.log(accounts);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -245,7 +260,7 @@ checkDogs([9, 16, 6, 8, 3], [10, 5, 6, 1, 4]);
 // Reduce - reduces all array elements down to one single value (eg. adding all of the elements together). Does not return
 // an array, only the "reduced" value
 
-                // The map Method */
+                // The map Method
 
 const eurToUsd = 1.1;
 console.log(movements);
@@ -272,4 +287,4 @@ const movementsDescriptions = movements.map(
       mov > 0 ? 'deposited' : 'withdrew'
     } ${Math.abs(mov)}`
 );
-console.log(movementsDescriptions);
+console.log(movementsDescriptions); */
