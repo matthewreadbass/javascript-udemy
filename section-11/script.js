@@ -287,4 +287,19 @@ const movementsDescriptions = movements.map(
       mov > 0 ? 'deposited' : 'withdrew'
     } ${Math.abs(mov)}`
 );
-console.log(movementsDescriptions); */
+console.log(movementsDescriptions);
+
+                  // The filter Method */
+
+const deposits = movements.filter(mov => mov > 0);
+console.log(movements); // [200, 450, -400, 3000, -650, -130, 70, 1300]
+console.log(deposits); // [200, 450, 3000, 70, 1300]
+
+// the above function with a for-of loop
+const depositsFor = [];
+for (const mov of movements) if (mov > 0) depositsFor.push(mov);
+console.log(depositsFor); // [200, 450, 3000, 70, 1300]
+// using the filter method is better for function chaining than using the for-of loop
+
+const withdrawals = movements.filter(mov => mov < 0);
+console.log(withdrawals); // [-400, -650, -130]
