@@ -214,7 +214,7 @@ currenciesUnique.forEach(function (value, key, map) {
 // *****There are no keys in a set, but it is kept in the argument list for consistency*****
 // Convention is to use an underscore or similar for such instances ("throwaway variables")
 
-                // Coding Challenge #1  */
+                // Coding Challenge #1
 
 const checkDogs = function (dogsJulia, dogsKate) {
   const juliaFixed = dogsJulia.slice(1, -2);
@@ -232,3 +232,15 @@ const checkDogs = function (dogsJulia, dogsKate) {
 
 checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
 checkDogs([9, 16, 6, 8, 3], [10, 5, 6, 1, 4]);
+
+                // Data Transformations: map, filter, reduce  */
+
+// Map - use to loop over an Array. Similar to the forEach PaymentMethodChangeEvent, except that Map creates a brand new
+// array based on the original array. Takes an array, loops over that array and on each iteration applies a callback function
+// specified in the code to apply to the current array element. It "maps" the original values of an array to a new array
+
+// Filter - Is used to filter for elements which satisfy a test condition in the original array. Creates a new "filtered" array
+// of the elements that pass the test conditions
+
+// Reduce - reduces all array elements down to one single value (eg. adding all of the elements together). Does not return
+// an array, only the "reduced" value
