@@ -225,7 +225,7 @@ const checkDogs = function (dogsJulia, dogsKate) {
         `Dog number ${index + 1} is an adult and is ${age} years old`
       );
     } else {
-      console.log(`Dog number ${index + 1} is a puppy and is ${age} years old`);
+      console.log(`Dog number ${index + 1} is still a puppy`);
     }
   });
 };
