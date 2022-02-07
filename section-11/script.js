@@ -76,7 +76,7 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 /////////////////////////////////////////////////
 
 /*
-                // Simple Array Methods */
+                // Simple Array Methods
 
 // Slice -> does not mutate array
 let arr = ['a', 'b', 'c', 'd', 'e'];
@@ -100,3 +100,13 @@ const letters = arr.concat(arr2); // ['a', 'b', 'f', 'g', 'h', 'i', 'j'] => same
 
 // Join -> creates a string - doesn't mutate array
 letters.join(' - '); // 'a - b - f - g - h - i - j'
+
+                // The New at Method */
+
+const arr = [23, 11, 64];
+arr.at(0); // 23
+arr.at(-1); // 64 => instead of arr[arr.length - 1] / arr.slice(-1)
+// useful for method chaining
+// also works on strings
+const myName = 'matthew';
+myName.at(-1); // 'w'
