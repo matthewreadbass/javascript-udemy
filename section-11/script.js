@@ -101,7 +101,7 @@ const letters = arr.concat(arr2); // ['a', 'b', 'f', 'g', 'h', 'i', 'j'] => same
 // Join -> creates a string - doesn't mutate array
 letters.join(' - '); // 'a - b - f - g - h - i - j'
 
-                // The New at Method */
+                // The New at Method
 
 const arr = [23, 11, 64];
 arr.at(0); // 23
@@ -110,3 +110,69 @@ arr.at(-1); // 64 => instead of arr[arr.length - 1] / arr.slice(-1)
 // also works on strings
 const myName = 'matthew';
 myName.at(-1); // 'w'
+
+              // Looping Arrays: forEach */
+// using banking data from above
+console.log('-----FOROF-----');
+for (const movement of movements) {
+  if (movement > 0) {
+    console.log(`You deposited ${movement}`);
+  } else {
+    console.log(`You withdrew ${Math.abs(movement)}`);
+  }
+}
+/* |=> You deposited 200
+You deposited 450
+You withdrew 400
+You deposited 3000
+You withdrew 650
+You withdrew 130
+You deposited 70
+You deposited 1300 */
+
+console.log('-----FOREACH-----');
+movements.forEach(function (movement) {
+  if (movement > 0) {
+    console.log(`You deposited ${movement}`);
+  } else {
+    console.log(`You withdrew ${Math.abs(movement)}`);
+  }
+});
+/* |=> You deposited 200
+You deposited 450
+You withdrew 400
+You deposited 3000
+You withdrew 650
+You withdrew 130
+You deposited 70
+You deposited 1300 */
+
+// Using a counter
+console.log('-----FOROF-COUNTER-----');
+for (const [i, movement] of movements.entries()) {
+  if (movement > 0) {
+    console.log(`Transaction #${i + 1}: You deposited ${movement}`);
+  } else {
+    console.log(`Transaction #${i + 1}: You withdrew ${Math.abs(movement)}`);
+  }
+}
+/* |=> Transaction #1: You deposited 200
+Transaction #2: You deposited 450
+Transaction #3: You withdrew 400
+Transaction #4: You deposited 3000
+Transaction #5: You withdrew 650
+Transaction #6: You withdrew 130
+Transaction #7: You deposited 70
+Transaction #8: You deposited 1300 */
+
+console.log('-----FOREACH-COUNTER-----');
+movements.forEach(function (movement, i, arr) {
+  // always has to be in order of current element, index number
+  // and entire array that is being looped over
+  if (movement > 0) {
+    console.log(`Transaction #${i + 1}: You deposited ${movement}`);
+  } else {
+    console.log(`Transaction #${i + 1}: You withdrew ${Math.abs(movement)}`);
+  }
+});
+// continue and break do not work in forEach statements
