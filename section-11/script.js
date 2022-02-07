@@ -212,4 +212,23 @@ currenciesUnique.forEach(function (value, key, map) {
 // EUR: EUR
 // GBP: GBP
 // *****There are no keys in a set, but it is kept in the argument list for consistency*****
-// Convention is to use an underscore or similar for such instances ("throwaway variables") */
+// Convention is to use an underscore or similar for such instances ("throwaway variables")
+
+                // Coding Challenge #1  */
+
+const checkDogs = function (dogsJulia, dogsKate) {
+  const juliaFixed = dogsJulia.slice(1, -2);
+  const allDogs = [...juliaFixed, ...dogsKate];
+  allDogs.forEach(function (age, index) {
+    if (age >= 3) {
+      console.log(
+        `Dog number ${index + 1} is an adult and is ${age} years old`
+      );
+    } else {
+      console.log(`Dog number ${index + 1} is a puppy and is ${age} years old`);
+    }
+  });
+};
+
+checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
+checkDogs([9, 16, 6, 8, 3], [10, 5, 6, 1, 4]);
