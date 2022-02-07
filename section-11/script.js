@@ -198,3 +198,4 @@ currenciesUnique.forEach(function (value, key, map) {
 // EUR: EUR
 // GBP: GBP
 // *****There are no keys in a set, but it is kept in the argument list for consistency*****
+// Convention is to use an underscore or similar for such instances ("throwaway variables")
