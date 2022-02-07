@@ -111,7 +111,7 @@ arr.at(-1); // 64 => instead of arr[arr.length - 1] / arr.slice(-1)
 const myName = 'matthew';
 myName.at(-1); // 'w'
 
-              // Looping Arrays: forEach */
+              // Looping Arrays: forEach
 // using banking data from above
 console.log('-----FOROF-----');
 for (const movement of movements) {
@@ -121,14 +121,14 @@ for (const movement of movements) {
     console.log(`You withdrew ${Math.abs(movement)}`);
   }
 }
-/* |=> You deposited 200
-You deposited 450
-You withdrew 400
-You deposited 3000
-You withdrew 650
-You withdrew 130
-You deposited 70
-You deposited 1300 */
+// |=> You deposited 200
+// You deposited 450
+// You withdrew 400
+// You deposited 3000
+// You withdrew 650
+// You withdrew 130
+// You deposited 70
+// You deposited 1300
 
 console.log('-----FOREACH-----');
 movements.forEach(function (movement) {
@@ -138,14 +138,14 @@ movements.forEach(function (movement) {
     console.log(`You withdrew ${Math.abs(movement)}`);
   }
 });
-/* |=> You deposited 200
-You deposited 450
-You withdrew 400
-You deposited 3000
-You withdrew 650
-You withdrew 130
-You deposited 70
-You deposited 1300 */
+// |=> You deposited 200
+// You deposited 450
+// You withdrew 400
+// You deposited 3000
+// You withdrew 650
+// You withdrew 130
+// You deposited 70
+// You deposited 1300
 
 // Using a counter
 console.log('-----FOROF-COUNTER-----');
@@ -156,14 +156,14 @@ for (const [i, movement] of movements.entries()) {
     console.log(`Transaction #${i + 1}: You withdrew ${Math.abs(movement)}`);
   }
 }
-/* |=> Transaction #1: You deposited 200
-Transaction #2: You deposited 450
-Transaction #3: You withdrew 400
-Transaction #4: You deposited 3000
-Transaction #5: You withdrew 650
-Transaction #6: You withdrew 130
-Transaction #7: You deposited 70
-Transaction #8: You deposited 1300 */
+// |=> Transaction #1: You deposited 200
+// Transaction #2: You deposited 450
+// Transaction #3: You withdrew 400
+// Transaction #4: You deposited 3000
+// Transaction #5: You withdrew 650
+// Transaction #6: You withdrew 130
+// Transaction #7: You deposited 70
+// Transaction #8: You deposited 1300
 
 console.log('-----FOREACH-COUNTER-----');
 movements.forEach(function (movement, i, arr) {
@@ -176,3 +176,25 @@ movements.forEach(function (movement, i, arr) {
   }
 });
 // continue and break do not work in forEach statements
+
+                // forEach with Maps and Sets */
+// using currencies map from above
+
+// Maps
+currencies.forEach(function (value, key, map) {
+  console.log(`${key}: ${value}`);
+});
+// |=> USD: United States dollar
+// EUR: Euro
+// GBP: Pound sterling
+
+// Sets
+const currenciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR']);
+console.log(currenciesUnique); // {'USD', 'GBP', 'EUR'}
+currenciesUnique.forEach(function (value, key, map) {
+  console.log(`${key}: ${value}`);
+});
+// |=> USD: USD
+// EUR: EUR
+// GBP: GBP
+// *****There are no keys in a set, but it is kept in the argument list for consistency*****
